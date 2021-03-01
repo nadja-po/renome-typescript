@@ -93,8 +93,22 @@
     overflow: auto;
     z-index: 20;
 }
+.header__menu.active {
+    left: 0;
+}
 .header__cartlist {
     display: none;
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    padding: 10px 10px 10px;
+    width: 100px;
+    background-color: var(--main-bg-color);
+    box-sizing: content-box;
+    z-index: 30;
+}
+.header__cartlist.active {
+    display: block;
     position: fixed;
     top: 50px;
     right: 30px;

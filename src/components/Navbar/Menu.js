@@ -1,39 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import { MenuItems } from './MenuItems';
 import burger from './icons/burger.svg';
 import close from './icons/close.svg';
 
-class Menu extends React.Component {
-    state = { dropdownVisible: false }
+function Menu () {
+    let [dropdownVisible, setVisible] = useState(false);
 
-    handleDropdownClick = () => {
-        this.setState(({ dropdownVisible }) => ({
-            dropdownVisible: !dropdownVisible,
-        }))
+    function handleDropdownClick () {
+        setVisible(dropdownVisible = !dropdownVisible);
     }
 
-    render() {
-        const dropdownVisible = this.state.dropdownVisible;
-        return (
-            <div className="header__burger" onClick={this.handleDropdownClick}>
-                <img src={dropdownVisible ? close : burger } alt="burger"/>
-                <div className='header__menu' style={{ left: dropdownVisible ? '0' : '-100%' }}>
-                    <ul className="header__list">
-                        {MenuItems.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a className={item.cName} href={item.url}>
-                                        {item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </div>           
-            </div>
-        )
-    }
+    return (
+        <div className="header__burger" onClick={handleDropdownClick}>
+            <img src={dropdownVisible ? close : burger } alt="burger"/>
+            <div className={ dropdownVisible ? 'header__menu active' : 'header__menu' }>
+                <ul className="header__list">
+                    {MenuItems.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a className={item.cName} href={item.url}>
+                                    {item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>           
+        </div>
+    )
+
 }
 
 export default Menu
