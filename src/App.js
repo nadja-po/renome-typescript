@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Carousel from './components/Carousel/Carousel';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Navbar />

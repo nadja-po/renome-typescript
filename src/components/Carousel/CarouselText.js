@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 
-function CarouselText () {
+const CarouselText = () => {
     return(
         <div className="carousel__text">
             <div className="carousel__title">

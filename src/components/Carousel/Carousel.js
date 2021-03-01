@@ -5,7 +5,7 @@ import carousel_img_1 from './images/carousel_img_1.png';
 import carousel_img_2 from './images/carousel_img_2.png';
 import carousel_img_3 from './images/carousel_img_3.png';
 
-function Carousel() {
+const Carousel = () => {
     return(
         <div className="carousel">
             < CarouselText />

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import '../../App.css';
-import { CartItems } from './CartItems';
+import  CartItems  from './CartItems';
 import cart from './icons/cart.svg';
 
-function Cart () {
+const Cart = () => {
     let [dropdownVisible, setVisible] = useState(false);
 
-    function handleDropdownClick () {
+    function dropDownClickHandler () {
         setVisible(dropdownVisible = !dropdownVisible);
     }
 
     return (
-        <div className="header__cart" onClick={handleDropdownClick}>
+        <div className="header__cart" onClick={dropDownClickHandler}>
             <img src={cart} alt="cart" />
             <div className="header__count">2</div>
             {<ul className={ dropdownVisible ? "header__cartlist active" : "header__cartlist"}>

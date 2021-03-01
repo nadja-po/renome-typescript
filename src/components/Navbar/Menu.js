@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import '../../App.css';
-import { MenuItems } from './MenuItems';
+import MenuItems from './MenuItems';
 import burger from './icons/burger.svg';
 import close from './icons/close.svg';
 
-function Menu () {
+const Menu = () => {
     let [dropdownVisible, setVisible] = useState(false);
 
-    function handleDropdownClick () {
+    function dropDownClickHandler () {
         setVisible(dropdownVisible = !dropdownVisible);
     }
 
     return (
-        <div className="header__burger" onClick={handleDropdownClick}>
+        <div className="header__burger" onClick={dropDownClickHandler}>
             <img src={dropdownVisible ? close : burger } alt="burger"/>
             <div className={ dropdownVisible ? 'header__menu active' : 'header__menu' }>
                 <ul className="header__list">

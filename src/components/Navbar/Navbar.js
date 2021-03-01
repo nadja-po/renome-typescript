@@ -3,7 +3,7 @@ import Cart from './Cart'
 import Menu from './Menu'
 import '../../App.css';
 
-function Navbar () {
+const Navbar = () => {
     return(
         <nav className="header__body">
             <h1 className="header__logo">Renome</h1>

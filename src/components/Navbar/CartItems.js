@@ -1,4 +1,4 @@
-export const CartItems = [
+const CartItems = [
     {
         title: '$44.50',
         url: '#',
@@ -15,3 +15,5 @@ export const CartItems = [
         cName: 'header__cartlink'
     }
 ]
+
+export default CartItems
