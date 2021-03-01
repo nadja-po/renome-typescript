@@ -6,7 +6,7 @@ import cart from './icons/cart.svg';
 const Cart = () => {
     let [dropdownVisible, setVisible] = useState(false);
 
-    function dropDownClickHandler () {
+    const dropDownClickHandler = () => {
         setVisible(dropdownVisible = !dropdownVisible);
     }
 
