@@ -7,7 +7,7 @@ import close from './icons/close.svg';
 const Menu = () => {
     let [dropdownVisible, setVisible] = useState(false);
 
-    function dropDownClickHandler () {
+    const dropDownClickHandler = () => {
         setVisible(dropdownVisible = !dropdownVisible);
     }
 
