@@ -1,0 +1,7 @@
+.carousel__text {
+    position: absolute;
+    top: 45%;
+    left: 8%;
+    text-align: left;
+    z-index: 10;
+}

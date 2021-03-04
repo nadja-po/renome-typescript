@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../App.css';
-import CarouselText from './CarouselText';
-import carousel_img_1 from './images/carousel_img_1.png';
-import carousel_img_2 from './images/carousel_img_2.png';
-import carousel_img_3 from './images/carousel_img_3.png';
+import './Carousel.css';
+import CarouselText from '../../molecules/CarouselText/CarouselText';
+import carousel_img_1 from '../../../images/carousel_img_1.png';
+import carousel_img_2 from '../../../images/carousel_img_2.png';
+import carousel_img_3 from '../../../images/carousel_img_3.png';
 
 const Carousel = () => {
     return(
