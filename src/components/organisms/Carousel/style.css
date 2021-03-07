@@ -20,8 +20,9 @@
     transition: left 0.5s;
     left: 100%;
 }
-.carousel__box img {
-    width: 100vw;
-    left: 0;
-    top: 0;
+.carousel__buttons {
+    position: absolute;
+    top: 70%;
+    left: 8%;
+    z-index: 10;
 }

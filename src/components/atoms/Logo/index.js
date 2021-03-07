@@ -1,9 +1,9 @@
 import React from 'react';
-import './Logo.css';
+import './style.css';
 
 const Logo = () => {
     return(
-            <h1 className="logo">Renome</h1>
+        <h1 className="logo">Renome</h1>
     )
 }
 

@@ -3,11 +3,6 @@
     border-right: 2px solid var(--main-color);
     margin-right: 10px;
 }
-.header__cart img {
-    width: 25px;
-    height: 25px;
-    padding: 3px 5px 0 0;
-}
 .header__count {
     padding: 3px 10px 0 5px;
     font-family: var(--main-title-font);

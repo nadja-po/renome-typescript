@@ -33,14 +33,47 @@
     line-height: 35px;
 }
 .header__list li:first-child {
-    border-top: 0;
+    border-top: 0;    
 }
 .header__link {
     text-decoration: none;
     color: var(--main-color);
 } 
-.header__burger img {
-    width: 25px;
-    height: 25px;
-    padding: 3px 5px 0 0;
+.header__sublink {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    font-family: var(--main-title-font);
+}
+.header__submenu {
+    position: fixed;
+    top: 60px;
+    left: 100%;
+    width: 100%;
+    padding: 0 10px 0 5px;
+    background-color: var(--main-bg-color);
+    transition: left 0.5s;
+    overflow: auto;
+    z-index: 20;
+}
+.header__submenu.active {
+    left: 0;
+}
+.header__sublink:hover {
+    color: var(--brown-color);
+}
+.header__submenu li {
+    list-style: none;
+    margin: 10px;
+    text-transform: none
+}
+.header__submenu li:first-child {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: right;
+    height: 43px;
+    line-height: 45px;
 }

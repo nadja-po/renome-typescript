@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/organisms/Navbar/Navbar';
-import Carousel from './components/organisms/Carousel/Carousel';
+import Navbar from './components/organisms/Navbar/index';
+import Carousel from './components/organisms/Carousel/index';
 
 const App = () => {
   return (

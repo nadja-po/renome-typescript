@@ -1,0 +1,23 @@
+.title__carousel {
+    font-family: var(--main-title-font);
+    color: var(--light-gray-color);
+    font-size: 27px;
+    letter-spacing: 3px;
+}
+.subtitle__carousel {
+    font-family: var(--main-title-font);
+    color: var(--brown-color);
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+.header__sublink {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    font-family: var(--main-title-font);
+}
+.header__sublink:hover {
+    color: var(--brown-color);
+}

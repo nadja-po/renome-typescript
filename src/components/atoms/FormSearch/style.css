@@ -1,0 +1,13 @@
+.form-search {
+    display: flex;
+    position: relative;
+    font-family: var(--main-title-font);
+    text-transform: none;
+    width: 100%;
+}
+.form-search input {
+    all: unset;
+    font-size: 12px;
+    width: 95%;
+    font-family: var(--main-title-font);
+}

@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import './Cart.css';
-import  CartItems  from './CartItems';
+import './style.css';
+import  CartItems  from '../CartItems/index';
+import  Icon  from '../../atoms/Icon/index';
 import cart from '../../../images/cart.svg';
 
-const Cart = ({updateCartState, updateMenuState, menuVisible}) => {
+const Cart = ({ updateCartState, updateMenuState, menuVisible }) => {
     const [cartVisible, setVisible] = useState(false);
 
-    const dropDownClickHandler = (cartVisible) => {
+    const dropDownClickHandler = (cartVisible, menuVisible) => {
         const isVisible = !cartVisible;
         updateCartState(isVisible);
         updateMenuState(false);
         setVisible(isVisible);
-    }
+        menuVisible = false;
+    };
 
     return (
         <div className="header__cart">
-            <img src={cart} alt="cart" onClick={() => dropDownClickHandler(cartVisible)} />
+            <Icon src={cart} alt="cart" onClick={() => dropDownClickHandler(cartVisible, menuVisible)} />
             <div className="header__count">2</div>
-            {<ul className={ (cartVisible & !menuVisible) ? "header__cartlist active" : "header__cartlist"}>
+            {<ul className={(cartVisible & !menuVisible) ? "header__cartlist active" : "header__cartlist"}>
                 {CartItems.map((item, index) => {
                     return (
                         <li key={index}>
@@ -25,11 +27,11 @@ const Cart = ({updateCartState, updateMenuState, menuVisible}) => {
                                 {item.title}
                             </a>
                         </li>
-                    )
+                    );
                 })}
             </ul>}
         </div>
-    )
+    );
 }
 
 export default Cart
