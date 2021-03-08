@@ -34,7 +34,7 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
 
     return (
         <div className="header__burger">
-            < Icon src={ menuVisible ^ submenuVisible ? close : burger } alt="burger" onClick={() => dropDownClickHandler(menuVisible, submenuVisible)}/>
+            < Icon src={ menuVisible || submenuVisible ? close : burger } alt="burger" onClick={() => dropDownClickHandler(menuVisible, submenuVisible)}/>
             <div className={ menuVisible & !cartVisible ? 'header__menu active' : 'header__menu' }>
                 <ul className="header__list">
                     <li>
