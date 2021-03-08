@@ -3,9 +3,7 @@ import './style.css';
 import MenuItems from '../../molecules/MenuItems/index';
 import SubmenuItems from '../../molecules/SubmenuItems/index';
 import Icon from '../../atoms/Icon/index';
-import Button from '../../atoms/Button/index';
 import FormSearch from '../../atoms/FormSearch/index';
-import Title from '../../atoms/Title/index';
 import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 
@@ -52,17 +50,11 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
                         )
                     })}
                     <div className={ submenuVisible & !cartVisible ? 'header__submenu active' : 'header__submenu'} >
-                        <li>
-                            <div className="button_back" onClick={() => showSubmenuClickHandler(submenuVisible)}>
-                            < Button className="header__sublink-button" arrowDirection="arrow-left" />
-                            < Title className="header__sublink" title='back' />
-                            </div>
-                        </li>
                         {SubmenuItems.map((item, index) => {
                             return (
-                                <li key={index}>
+                                <li key={index} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
                                     <a className={item.cName} href={item.url}>
-                                        {item.title}
+                                    {item.button} {item.title}
                                     </a>
                                 </li> 
                             )

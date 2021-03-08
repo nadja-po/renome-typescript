@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import  CartItems  from '../CartItems/index';
+import  CartItems  from '../../molecules/CartItems/index';
 import  Icon  from '../../atoms/Icon/index';
 import cart from '../../../images/cart.svg';
 
@@ -12,7 +12,6 @@ const Cart = ({ updateCartState, updateMenuState, menuVisible }) => {
         updateCartState(isVisible);
         updateMenuState(false);
         setVisible(isVisible);
-        menuVisible = false;
     };
 
     return (

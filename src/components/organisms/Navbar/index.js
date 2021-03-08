@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
-import Cart from '../../molecules/Cart/index'
-import Menu from '../../molecules/Menu/index'
+import Cart from '../Cart/index'
+import Menu from '../Menu/index'
 import Logo from '../../atoms/Logo/index'
 import './style.css';
 

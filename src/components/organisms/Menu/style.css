@@ -39,14 +39,6 @@
     text-decoration: none;
     color: var(--main-color);
 } 
-.header__sublink {
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: var(--main-color);
-    font-weight: bold;
-    font-family: var(--main-title-font);
-}
 .header__submenu {
     position: fixed;
     top: 60px;
@@ -61,13 +53,10 @@
 .header__submenu.active {
     left: 0;
 }
-.header__sublink:hover {
-    color: var(--brown-color);
-}
 .header__submenu li {
     list-style: none;
     margin: 10px;
-    text-transform: none
+    text-transform: none;
 }
 .header__submenu li:first-child {
     text-transform: uppercase;
