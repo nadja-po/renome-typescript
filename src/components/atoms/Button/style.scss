@@ -1,4 +1,4 @@
-.carousel__button {
+.button-big {
     height: 60px;
     width: 60px;
     border: 3px solid var(--light-gray-color);
@@ -6,7 +6,7 @@
     margin-right: 10px;
     outline: none;
 }
-.header__link-button {
+.button-small__link {
     position: absolute;
     height: 40px;
     width: 40px;
@@ -15,7 +15,7 @@
     right: 25px;
     top: 330px;
 }
-.header__sublink-button {
+.button-small__sublink {
     position: absolute;
     height: 40px;
     width: 40px;

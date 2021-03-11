@@ -1,12 +1,12 @@
 import React from 'react';
-import './style.css';
-import Title from '../../atoms/Title/index';
+import './style.scss';
+import Title from '../../atoms/Title';
 
-function CarouselText() {
+function CarouselText( { title, subtitle }) {
     return (
         <div className="carousel__text">
-            <Title className="title__carousel" title='Made with love' />
-            <Title className="subtitle__carousel" title='for you' />
+            <Title title={ title } />
+            <Title title={ subtitle } titleVariant="subtitle" />
         </div>
     );
 }

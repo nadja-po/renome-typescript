@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './style.css';
-import MenuItems from '../../molecules/MenuItems/index';
-import SubmenuItems from '../../molecules/SubmenuItems/index';
-import Icon from '../../atoms/Icon/index';
-import FormSearch from '../../atoms/FormSearch/index';
+import './style.scss';
+import MenuItems from '../../molecules/MenuItems';
+import SubmenuItems from '../../molecules/SubmenuItems';
+import Icon from '../../atoms/Icon';
+import FormSearch from '../../atoms/FormSearch';
+import Button from '../../atoms/Button';
 import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 
@@ -43,8 +44,8 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
                     {MenuItems.map((item, index) => {
                         return (
                             <li key={index} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
-                                <a className={item.cName} href={item.url} >
-                                    {item.title} {item.button}
+                                <a className={item.className} href={item.url} >
+                                    {item.title} {item.button ? < Button className="button-small__link" arrowDirection="arrow-right" /> : null }
                                 </a>
                             </li>  
                         )
@@ -53,8 +54,8 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
                         {SubmenuItems.map((item, index) => {
                             return (
                                 <li key={index} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
-                                    <a className={item.cName} href={item.url}>
-                                    {item.button} {item.title}
+                                    <a className={item.className} href={item.url}>
+                                    {item.button ? < Button className="button-small__sublink" arrowDirection="arrow-left" /> : null } {item.title}
                                     </a>
                                 </li> 
                             )

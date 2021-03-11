@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './style.css';
-import  CartItems  from '../../molecules/CartItems/index';
-import  Icon  from '../../atoms/Icon/index';
+import './style.scss';
+import  CartItems  from '../../molecules/CartItems';
+import  Icon  from '../../atoms/Icon';
 import cart from '../../../images/cart.svg';
 
 const Cart = ({ updateCartState, updateMenuState, menuVisible }) => {
@@ -22,7 +22,7 @@ const Cart = ({ updateCartState, updateMenuState, menuVisible }) => {
                 {CartItems.map((item, index) => {
                     return (
                         <li key={index}>
-                            <a className={item.cName} href={item.url}>
+                            <a className={item.className} href={item.url}>
                                 {item.title}
                             </a>
                         </li>

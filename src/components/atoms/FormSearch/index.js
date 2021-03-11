@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css';
-import Icon  from '../../atoms/Icon/index';
+import './style.scss';
+import Icon  from '../Icon';
 import search from '../../../images/search.svg';
 
 const FormSearch = () => {
@@ -11,7 +11,7 @@ const FormSearch = () => {
                 name="text"
                 placeholder="Search..."
             />
-            < Icon src={ search } alt="magnifying glass" />
+            <Icon src={ search } alt="magnifying glass" />
         </form>
     )
 }

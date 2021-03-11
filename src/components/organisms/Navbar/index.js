@@ -1,8 +1,8 @@
 import React, { useState }  from 'react';
-import Cart from '../Cart/index'
-import Menu from '../Menu/index'
-import Logo from '../../atoms/Logo/index'
-import './style.css';
+import Cart from '../Cart'
+import Menu from '../Menu'
+import Logo from '../../atoms/Logo'
+import './style.scss';
 
 const Navbar = () => {
     const [cartVisible, setCartState] = useState(false);

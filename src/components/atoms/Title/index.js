@@ -1,11 +1,11 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
-const Title = ( { title, className } ) => {
+const Title = ( { title, titleVariant } ) => {
     return(
-        <div className={ className } >
+        <p className={titleVariant ? `title-${titleVariant}` : "title"} >
             { title }
-        </div>
+        </p>
     )
 }
 
