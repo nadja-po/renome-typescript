@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.scss';
-import  CartItems  from '../../molecules/CartItems';
+import data from '../../data.json';
 import  Icon  from '../../atoms/Icon';
 import cart from '../../../images/cart.svg';
 
@@ -19,7 +19,7 @@ const Cart = ({ updateCartState, updateMenuState, menuVisible }) => {
             <Icon src={cart} alt="cart" onClick={() => dropDownClickHandler(cartVisible, menuVisible)} />
             <div className="header__count">2</div>
             {<ul className={(cartVisible & !menuVisible) ? "header__cartlist active" : "header__cartlist"}>
-                {CartItems.map((item, index) => {
+                {data.cartItems.map((item, index) => {
                     return (
                         <li key={index}>
                             <a className={item.className} href={item.url}>

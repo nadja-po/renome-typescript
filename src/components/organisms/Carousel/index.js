@@ -3,16 +3,14 @@ import './style.scss';
 import CarouselText from '../../molecules/CarouselText';
 import Image from '../../atoms/Image';
 import Button from '../../atoms/Button';
-import carousel_img_1 from '../../../images/carousel_img_1.png';
-import carousel_img_2 from '../../../images/carousel_img_2.png';
-import carousel_img_3 from '../../../images/carousel_img_3.png';
+import data from '../../data.json';
 
 const Carousel = () => {
     return(
         <div className="carousel">
-            <CarouselText title="Made with love" subtitle="for you"/>
+            <CarouselText title={data.carouselTitle.text} subtitle={data.carouselSubtitle.text}/>
             <div className="carousel__box middle">
-                <Image src={carousel_img_1} alt="img1" className="carousel__img" />
+                <Image src={require(`../../../images/${data.carouselImages.src}`).default} alt={data.carouselImages.alt} className="carousel__img" />
             </div>
             <div className="carousel__buttons">
                 <Button className="button-big" arrowDirection="arrow-left arrow_carousel"/>

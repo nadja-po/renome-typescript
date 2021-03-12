@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.scss';
-import MenuItems from '../../molecules/MenuItems';
-import SubmenuItems from '../../molecules/SubmenuItems';
+import data from '../../data.json';
 import Icon from '../../atoms/Icon';
 import FormSearch from '../../atoms/FormSearch';
 import Button from '../../atoms/Button';
@@ -41,7 +40,7 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
                     <li>
                         < FormSearch />
                     </li>
-                    {MenuItems.map((item, index) => {
+                    {data.menuItems.map((item, index) => {
                         return (
                             <li key={index} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
                                 <a className={item.className} href={item.url} >
@@ -51,7 +50,7 @@ const Menu = ({updateMenuState, updateCartState, cartVisible}) => {
                         )
                     })}
                     <div className={ submenuVisible & !cartVisible ? 'header__submenu active' : 'header__submenu'} >
-                        {SubmenuItems.map((item, index) => {
+                        {data.submenuItems.map((item, index) => {
                             return (
                                 <li key={index} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
                                     <a className={item.className} href={item.url}>

@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import Cart from '../Cart'
 import Menu from '../Menu'
 import Logo from '../../atoms/Logo'
+import data from '../../data.json'
 import './style.scss';
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
 
     return(
         <nav className="header__body">
-            <Logo />
+            <Logo text={data.logoText.text}/>
             <div className="header__container">
                 <Cart updateCartState={updateCartState} updateMenuState={updateMenuState} menuVisible={menuVisible}/>
                 <Menu updateMenuState={updateMenuState} updateCartState={updateCartState} cartVisible={cartVisible}/>

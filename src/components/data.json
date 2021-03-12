@@ -1,0 +1,102 @@
+ 
+{  
+  "logoText": { "text": "Renome" }, 
+
+  "carouselTitle": { "text": "Made with love" },
+
+  "carouselSubtitle": { "text": "for you" },
+
+  "menuItems": [
+    {
+        "title": "home",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "about",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "menu",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "reservations",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "blog",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "features",
+        "url": "#",
+        "className": "header__link",
+        "button": "true", 
+        "onclick": "true"
+    },
+    {
+        "title": "shop",
+        "url": "#",
+        "className": "header__link"
+    },
+    {
+        "title": "contact",
+        "url": "#",
+        "className": "header__link"
+    }
+    ],
+
+  "submenuItems": [
+    {
+        "title": "back",
+        "url": "#",
+        "className": "header__sublink",
+        "button": "true",
+        "onclick": "true"
+    },
+    {
+        "title": "One page",
+        "url": "#",
+        "className": "header__sublink"
+    },
+    {
+        "title": "Portfolio",
+        "url": "#",
+        "className": "header__sublink"
+    },
+    {
+        "title": "Shortcodes",
+        "url": "#",
+        "className": "header__sublink"
+    }
+  ],
+
+  "cartItems": [
+    {
+        "title": "$44.50",
+        "url": "#",
+        "className": "header__cartlink"
+    },
+    {
+        "title": "View Cart",
+        "url": "#",
+        "className": "header__cartlink"
+    },
+    {
+        "title": "Checkout",
+        "url": "#",
+        "className": "header__cartlink"
+    }
+  ],
+
+  "carouselImages": 
+    {
+        "src": "carousel_img_1.png",
+        "alt": "img1"
+    }
+}
