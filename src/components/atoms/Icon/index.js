@@ -1,10 +1,8 @@
 import React from 'react';
 import './style.scss';
 
-const Icon = ({ src, alt, onClick }) => {
-    return (
-        <img className="icon" src={src} alt={alt} onClick={onClick} />
-    );
-}
+const Icon = ({ src, alt }) => (
+  <img className="icon" src={src} alt={alt} />
+);
 
-export default Icon
+export default Icon;

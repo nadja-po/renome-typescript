@@ -1,23 +1,41 @@
-import React from 'react';
-import './style.scss';
+import React, { useState, useEffect } from 'react';
 import CarouselText from '../../molecules/CarouselText';
-import Image from '../../atoms/Image';
 import Button from '../../atoms/Button';
-import data from '../../data.json';
+import './style.scss';
 
 const Carousel = () => {
-    return(
-        <div className="carousel">
-            <CarouselText title={data.carouselTitle.text} subtitle={data.carouselSubtitle.text}/>
-            <div className="carousel__box middle">
-                <Image src={require(`../../../images/${data.carouselImages.src}`).default} alt={data.carouselImages.alt} className="carousel__img" />
-            </div>
-            <div className="carousel__buttons">
-                <Button className="button-big" arrowDirection="arrow-left arrow_carousel"/>
-                <Button className="button-big" arrowDirection="arrow-right arrow_carousel"/>
-            </div>
-        </div>
-    )
-}
+  const [titleData, setData] = useState([]);
+  const [subtitleData, setData1] = useState([]);
+  const [imageData, setData2] = useState([]);
+  const getData = () => {
+    fetch('./data.json')
+      .then((response) => response.json())
+      .then((data) => setData(data.carouselTitle));
+    fetch('./data.json')
+      .then((response) => response.json())
+      .then((data1) => setData1(data1.carouselSubtitle));
+    fetch('./data.json')
+      .then((response) => response.json())
+      .then((data2) => setData2(data2.carouselImages));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
-export default Carousel
+  const Image = require(`../../../images/${imageData.src}`).default;
+
+  return (
+    <div className="carousel">
+      <CarouselText title={titleData.text} subtitle={subtitleData.text} />
+      <div className="carousel__box middle">
+        <img src={Image} alt={imageData.alt} className="carousel__img" />
+      </div>
+      <div className="carousel__buttons">
+        <Button className="button-big" arrowDirection="arrow arrow-left arrow-big" />
+        <Button className="button-big" arrowDirection="arrow arrow-right arrow-big" />
+      </div>
+    </div>
+  );
+};
+
+export default Carousel;

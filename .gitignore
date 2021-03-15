@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /.vscode
+.eslintrc.js
 
 # testing
 /coverage

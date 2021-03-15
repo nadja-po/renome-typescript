@@ -1,15 +1,13 @@
 import React from 'react';
-import './App.scss';
 import Navbar from './components/organisms/Navbar';
 import Carousel from './components/organisms/Carousel';
+import './App.scss';
 
-const App = () => {
-  return (
-    <div className="App">
-      <Navbar />
-      <Carousel />
-    </div>
-  )
-}
+const App = () => (
+  <div className="App">
+    <Navbar />
+    <Carousel />
+  </div>
+);
 
 export default App;
