@@ -22,13 +22,11 @@ const Carousel = () => {
     getData();
   }, []);
 
-  const Image = require(`../../../images/${imageData.src}`).default;
-
   return (
     <div className="carousel">
       <CarouselText title={titleData.text} subtitle={subtitleData.text} />
       <div className="carousel__box middle">
-        <img src={Image} alt={imageData.alt} className="carousel__img" />
+        <img src={imageData.src} alt={imageData.alt} className="carousel__img" />
       </div>
       <div className="carousel__buttons">
         <Button className="button-big" arrowDirection="arrow arrow-left arrow-big" />

@@ -111,7 +111,7 @@
   "carouselImages": 
     {
         "id": "1",
-        "src": "carousel_img_1.png",
+        "src": "http://localhost:3000/static/media/carousel_img_1.98596b0d.png",
         "alt": "img1"
     }
 }
