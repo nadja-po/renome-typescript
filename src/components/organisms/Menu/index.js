@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from '../../atoms/Icon';
 import FormSearch from '../../atoms/FormSearch';
 import Button from '../../atoms/Button';
@@ -6,7 +6,7 @@ import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 import './style.scss';
 
-const Menu = ({ updateMenuState, updateCartState, cartVisible }) => {
+const Menu = ({ updateMenuState, updateCartState, cartVisible, menuItems, submenuItems }) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [submenuVisible, setSubmenuVisible] = useState(false);
 
@@ -31,20 +31,6 @@ const Menu = ({ updateMenuState, updateCartState, cartVisible }) => {
     }
   };
 
-  const [menuData, setData] = useState([]);
-  const [submenuData, setData1] = useState([]);
-  const getData = () => {
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data) => setData(data.menuItems));
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data1) => setData1(data1.submenuItems));
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <div>
       <button type="button" className="header__burger" onClick={() => dropDownClickHandler(menuVisible, submenuVisible)}>
@@ -55,7 +41,7 @@ const Menu = ({ updateMenuState, updateCartState, cartVisible }) => {
           <li>
             <FormSearch />
           </li>
-          {menuData.map((item) => (
+          {menuItems && menuItems.map((item) => (
             <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
               <a className={item.className} href={item.url}>
                 {item.title}
@@ -65,7 +51,7 @@ const Menu = ({ updateMenuState, updateCartState, cartVisible }) => {
             </li>
           ))}
           <div className={submenuVisible && !cartVisible ? 'header__submenu active' : 'header__submenu'}>
-            {submenuData.map((item) => (
+            {submenuItems && submenuItems.map((item) => (
               <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
                 <a className={item.className} href={item.url}>
                   {item.button ? <Button className="button button-small button-sublink" arrowDirection="arrow arrow-left" /> : null }

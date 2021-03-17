@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Cart from '../Cart';
 import Menu from '../Menu';
 import Logo from '../../atoms/Logo';
 import './style.scss';
 
-const Navbar = () => {
+const Navbar = ({logo, cartItems, menuItems, submenuItems}) => {
   const [cartVisible, setCartState] = useState(false);
   const [menuVisible, setMenuState] = useState(false);
 
@@ -15,29 +15,22 @@ const Navbar = () => {
     setMenuState(value);
   };
 
-  const [data, setData] = useState([]);
-  const getData = () => {
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data) => setData(data.logoText));
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <nav className="header">
-      <Logo text={data.text} />
+      <Logo text={logo} />
       <div className="header__container">
         <Cart
           updateCartState={updateCartState}
           updateMenuState={updateMenuState}
           menuVisible={menuVisible}
+          cartItems={cartItems}
         />
         <Menu
           updateMenuState={updateMenuState}
           updateCartState={updateCartState}
           cartVisible={cartVisible}
+          menuItems={menuItems}
+          submenuItems={submenuItems}
         />
       </div>
     </nav>

@@ -1,32 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CarouselText from '../../molecules/CarouselText';
 import Button from '../../atoms/Button';
 import './style.scss';
 
-const Carousel = () => {
-  const [titleData, setData] = useState([]);
-  const [subtitleData, setData1] = useState([]);
-  const [imageData, setData2] = useState([]);
-  const getData = () => {
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data) => setData(data.carouselTitle));
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data1) => setData1(data1.carouselSubtitle));
-    fetch('./data.json')
-      .then((response) => response.json())
-      .then((data2) => setData2(data2.carouselImages));
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-
+const Carousel = ({title, subtitle, images}) => {
+  console.log(images && images[0].src)
   return (
     <div className="carousel">
-      <CarouselText title={titleData.text} subtitle={subtitleData.text} />
+      <CarouselText title={title} subtitle={subtitle} />
       <div className="carousel__box middle">
-        <img src={imageData.src} alt={imageData.alt} className="carousel__img" />
+        <img src={require('../../../images/carousel_img_1.png').default} alt={images && images[0].alt} className="carousel__img" />
       </div>
       <div className="carousel__buttons">
         <Button className="button-big" arrowDirection="arrow arrow-left arrow-big" />
@@ -37,3 +20,6 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
+//images && require(`${images[0].src}`).default
+//require('../../../images/carousel_img_1.png').default

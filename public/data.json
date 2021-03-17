@@ -1,117 +1,119 @@
- {  
-  "logoText": { "text": "Renome" }, 
 
-  "carouselTitle": { "text": "Made with love" },
+    {  
+    "logoText": "Renome", 
 
-  "carouselSubtitle": { "text": "for you" },
+    "carouselTitle": "Made with love",
 
-  "menuItems": [
-    {
-        "id": "1",
-        "title": "home",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "2",
-        "title": "about",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "3",
-        "title": "menu",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "4",
-        "title": "reservations",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "5",
-        "title": "blog",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "6",
-        "title": "features",
-        "url": "#",
-        "className": "header__link",
-        "button": "true", 
-        "onclick": "true"
-    },
-    {
-        "id": "7",
-        "title": "shop",
-        "url": "#",
-        "className": "header__link"
-    },
-    {
-        "id": "8",
-        "title": "contact",
-        "url": "#",
-        "className": "header__link"
-    }
+    "carouselSubtitle": "for you",
+
+    "menuItems": [
+        {
+            "id": "1",
+            "title": "home",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "2",
+            "title": "about",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "3",
+            "title": "menu",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "4",
+            "title": "reservations",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "5",
+            "title": "blog",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "6",
+            "title": "features",
+            "url": "#",
+            "className": "header__link",
+            "button": "true", 
+            "onclick": "true"
+        },
+        {
+            "id": "7",
+            "title": "shop",
+            "url": "#",
+            "className": "header__link"
+        },
+        {
+            "id": "8",
+            "title": "contact",
+            "url": "#",
+            "className": "header__link"
+        }
+        ],
+
+    "submenuItems": [
+        {
+            "id": "1",
+            "title": "back",
+            "url": "#",
+            "className": "header__sublink",
+            "button": "true",
+            "onclick": "true"
+        },
+        {
+            "id": "2",
+            "title": "One page",
+            "url": "#",
+            "className": "header__sublink"
+        },
+        {
+            "id": "3",
+            "title": "Portfolio",
+            "url": "#",
+            "className": "header__sublink"
+        },
+        {
+            "id": "4",
+            "title": "Shortcodes",
+            "url": "#",
+            "className": "header__sublink"
+        }
     ],
 
-  "submenuItems": [
-    {
-        "id": "1",
-        "title": "back",
-        "url": "#",
-        "className": "header__sublink",
-        "button": "true",
-        "onclick": "true"
-    },
-    {
-        "id": "2",
-        "title": "One page",
-        "url": "#",
-        "className": "header__sublink"
-    },
-    {
-        "id": "3",
-        "title": "Portfolio",
-        "url": "#",
-        "className": "header__sublink"
-    },
-    {
-        "id": "4",
-        "title": "Shortcodes",
-        "url": "#",
-        "className": "header__sublink"
-    }
-  ],
+    "cartItems": [
+        {
+            "id": "1",
+            "title": "$44.50",
+            "url": "#",
+            "className": "header__cartlink"
+        },
+        {
+            "id": "2",
+            "title": "View Cart",
+            "url": "#",
+            "className": "header__cartlink"
+        },
+        {
+            "id": "3",
+            "title": "Checkout",
+            "url": "#",
+            "className": "header__cartlink"
+        }
+    ],
 
-  "cartItems": [
-    {
-        "id": "1",
-        "title": "$44.50",
-        "url": "#",
-        "className": "header__cartlink"
-    },
-    {
-        "id": "2",
-        "title": "View Cart",
-        "url": "#",
-        "className": "header__cartlink"
-    },
-    {
-        "id": "3",
-        "title": "Checkout",
-        "url": "#",
-        "className": "header__cartlink"
+    "carouselImages": [
+        {
+            "id": "1",
+            "src": "../../../images/carousel_img_1.png",
+            "alt": "img1"
+        }
+    ]
     }
-  ],
-
-  "carouselImages": 
-    {
-        "id": "1",
-        "src": "http://localhost:3000/static/media/carousel_img_1.98596b0d.png",
-        "alt": "img1"
-    }
-}
