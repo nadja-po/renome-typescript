@@ -13,12 +13,12 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
-  //console.log(dataJson)
-return (
-  <div className="App">
-    <Navbar logo={dataJson.logoText} cartItems={dataJson.cartItems } menuItems={dataJson.menuItems } submenuItems={dataJson.submenuItems }/>
-    <Carousel title={dataJson.carouselTitle} subtitle={dataJson.carouselSubtitle} images={dataJson.carouselImages} />
-  </div>
-);
+
+  return (
+    <div className="App">
+      <Navbar logo={dataJson.logoText} cartItems={dataJson.cartItems } menuItems={dataJson.menuItems } submenuItems={dataJson.submenuItems }/>
+      <Carousel title={dataJson.carouselTitle} subtitle={dataJson.carouselSubtitle} images={dataJson.carouselImages} />
+    </div>
+  );
 }
 export default App;
