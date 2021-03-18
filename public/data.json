@@ -112,7 +112,7 @@
     "carouselImages": [
         {
             "id": "1",
-            "src": "../../../images/carousel_img_1.png",
+            "src": "carousel_img_1.png",
             "alt": "img1"
         }
     ]
