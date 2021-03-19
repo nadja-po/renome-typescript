@@ -22,10 +22,10 @@
             transition: left 0.5s;
             left: 100%;
         }
-
-        img {
-            width: 100vw;
-        }
+    }
+    
+    &__img {
+        width: 100vw;
     }
 
     &__buttons {
@@ -35,13 +35,3 @@
         z-index: 10;
     }
 }
-
-
-
-
-
-
-
-
-
-

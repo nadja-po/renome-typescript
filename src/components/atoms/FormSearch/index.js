@@ -6,6 +6,7 @@ import './style.scss';
 const FormSearch = () => (
   <form className="form-search">
     <input
+      className="form-search__input"
       type="search"
       name="text"
       placeholder="Search..."

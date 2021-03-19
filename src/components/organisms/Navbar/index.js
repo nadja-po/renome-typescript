@@ -4,15 +4,17 @@ import Menu from '../Menu';
 import Logo from '../../atoms/Logo';
 import './style.scss';
 
-const Navbar = ({logo, cartItems, menuItems, submenuItems}) => {
-  const [cartVisible, setCartState] = useState(false);
-  const [menuVisible, setMenuState] = useState(false);
+const Navbar = ({
+  logo, cartItems, menuItems, submenuItems,
+}) => {
+  const [isCartVisible, setCartIsVisible] = useState(false);
+  const [isMenuVisible, setMenuIsVisible] = useState(false);
 
   const updateCartState = (value) => {
-    setCartState(value);
+    setCartIsVisible(value);
   };
   const updateMenuState = (value) => {
-    setMenuState(value);
+    setMenuIsVisible(value);
   };
 
   return (
@@ -22,13 +24,13 @@ const Navbar = ({logo, cartItems, menuItems, submenuItems}) => {
         <Cart
           updateCartState={updateCartState}
           updateMenuState={updateMenuState}
-          menuVisible={menuVisible}
+          isMenuVisible={isMenuVisible}
           cartItems={cartItems}
         />
         <Menu
           updateMenuState={updateMenuState}
           updateCartState={updateCartState}
-          cartVisible={cartVisible}
+          isCartVisible={isCartVisible}
           menuItems={menuItems}
           submenuItems={submenuItems}
         />
