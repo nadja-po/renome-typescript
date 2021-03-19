@@ -5,11 +5,10 @@
     text-transform: none;
     width: 100%;
 
-    input {
+    &__input {
         all: unset;
         font-size: 12px;
         width: 95%;
         font-family: var(--main-title-font);
     }
-    
 }
