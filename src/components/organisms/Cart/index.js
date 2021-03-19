@@ -22,7 +22,7 @@ const Cart = ({ updateCartState, updateMenuState, menuVisible, cartItems }) => {
       <ul className={(cartVisible && !menuVisible) ? 'header__cartlist active' : 'header__cartlist'}>
         {cartItems && cartItems.map((item) => (
           <li key={item.id}>
-            <a className={item.className} href={item.url}>
+            <a className="header__cartlink" href={item.url}>
               {item.title}
             </a>
           </li>

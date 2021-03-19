@@ -43,7 +43,7 @@ const Menu = ({ updateMenuState, updateCartState, cartVisible, menuItems, submen
           </li>
           {menuItems && menuItems.map((item) => (
             <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
-              <a className={item.className} href={item.url}>
+              <a className="header__link" href={item.url}>
                 {item.title}
                 {' '}
                 {item.button ? <Button className="button button-small button-link" arrowDirection="arrow arrow-right" /> : null }
@@ -53,7 +53,7 @@ const Menu = ({ updateMenuState, updateCartState, cartVisible, menuItems, submen
           <div className={submenuVisible && !cartVisible ? 'header__submenu active' : 'header__submenu'}>
             {submenuItems && submenuItems.map((item) => (
               <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(submenuVisible) : null}>
-                <a className={item.className} href={item.url}>
+                <a className="header__sublink" href={item.url}>
                   {item.button ? <Button className="button button-small button-sublink" arrowDirection="arrow arrow-left" /> : null }
                   {' '}
                   {item.title}
