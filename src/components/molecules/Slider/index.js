@@ -7,27 +7,19 @@ import './style.scss';
 
 const Slider = () => {
   const img = [
-    <img key={img1} src={img1} alt="img1" />,
-    <img key={img2} src={img2} alt="img2" />,
-    <img key={img3} src={img3} alt="img3" />,
+    <img key={img1} src={img1} alt="img1" className="slider-img"/>,
+    <img key={img2} src={img2} alt="img2" className="slider-img"/>,
+    <img key={img3} src={img3} alt="img3" className="slider-img"/>,
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isDirectionRight, setRightDirection] = useState(true);
+  //const [isDirectionRight, setRightDirection] = useState(true);
 
   let prevImgIndex;
   let nextImgIndex;
 
-  if (isDirectionRight) {
-    prevImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
-    nextImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
-  } else {
-    nextImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
-    prevImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
-  }
-
   const dropDownClickRight = () => {
-    setRightDirection(true);
+   // setRightDirection(true);
     setActiveIndex((current) => {
       const res = current === img.length - 1 ? 0 : current + 1;
       return res;
@@ -35,29 +27,32 @@ const Slider = () => {
   };
 
   const dropDownClickLeft = () => {
-    setRightDirection(false);
+    // setRightDirection(false);
     setActiveIndex((current) => {
       const res = current === 0 ? img.length - 1 : current - 1;
       return res;
     });
   };
 
+    prevImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
+    nextImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
+
   return (
     <div className="slider">
       <div
-        className={isDirectionRight ? 'slider-img-prev' : 'slider-img-next'}
+        className={'slider-img-prev'}
         key={prevImgIndex}
       >
         {img[prevImgIndex]}
       </div>
       <div
-        className="slider-img"
+        className="slider-img-middle"
         key={activeIndex}
       >
         {img[activeIndex]}
       </div>
       <div
-        className={isDirectionRight ? 'slider-img-next' : 'slider-img-prev'}
+        className={'slider-img-next'}
         key={nextImgIndex}
       >
         {img[nextImgIndex]}
