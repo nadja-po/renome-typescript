@@ -5,11 +5,11 @@ import './style.scss';
 
 const Slider = ({ title, subtitle, images }) => {
   const slides = [
-    <img key="1" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} />,
-    <img key="2" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} />,
-    <img key="3" src={images && require(`../../../images/${images[1].src}`).default} alt={images && images[1].alt} />,
-    <img key="4" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} />,
-    <img key="5" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} />,
+    <img key="1" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} className="slider__slide__img"/>,
+    <img key="2" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} className="slider__slide__img"/>,
+    <img key="3" src={images && require(`../../../images/${images[1].src}`).default} alt={images && images[1].alt} className="slider__slide__img"/>,
+    <img key="4" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} className="slider__slide__img"/>,
+    <img key="5" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} className="slider__slide__img"/>,
   ];
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transitionOn');

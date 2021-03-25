@@ -96,17 +96,14 @@
 
     "carouselImages": [
         {
-            "id": "1",
             "src": "carousel_img_1.png",
             "alt": "img1"
         },
         {
-            "id": "2",
             "src": "carousel_img_2.png",
             "alt": "img2"
         },
         {
-            "id": "3",
             "src": "carousel_img_3.png",
             "alt": "img3"
         }
