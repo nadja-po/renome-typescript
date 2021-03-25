@@ -1,67 +1,79 @@
 import React, { useState } from 'react';
 import Button from '../../atoms/Button';
-import img1 from '../../../images/carousel_img_1.png';
-import img2 from '../../../images/carousel_img_2.png';
-import img3 from '../../../images/carousel_img_3.png';
+import CarouselText from '../CarouselText';
 import './style.scss';
 
-const Slider = () => {
-  const img = [
-    <img key={img1} src={img1} alt="img1" />,
-    <img key={img2} src={img2} alt="img2" />,
-    <img key={img3} src={img3} alt="img3" />,
+const Slider = ({ title, subtitle, images }) => {
+  const slides = [
+    <img key="1" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} />,
+    <img key="2" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} />,
+    <img key="3" src={images && require(`../../../images/${images[1].src}`).default} alt={images && images[1].alt} />,
+    <img key="4" src={images && require(`../../../images/${images[2].src}`).default} alt={images && images[2].alt} />,
+    <img key="5" src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} />,
   ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isDirectionRight, setRightDirection] = useState(true);
-
-  let prevImgIndex;
-  let nextImgIndex;
-
-  if (isDirectionRight) {
-    prevImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
-    nextImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
-  } else {
-    nextImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
-    prevImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
-  }
-
-  const dropDownClickRight = () => {
-    setRightDirection(true);
-    setActiveIndex((current) => {
-      const res = current === img.length - 1 ? 0 : current + 1;
-      return res;
-    });
-  };
+  const [transform, setTransform] = useState(-100);
+  const [transition, setTransition] = useState('transitionOn');
+  const [step, setStep] = useState(1);
 
   const dropDownClickLeft = () => {
-    setRightDirection(false);
-    setActiveIndex((current) => {
-      const res = current === 0 ? img.length - 1 : current - 1;
-      return res;
-    });
+    setStep(step - 1);
+    if (step < 1) {
+      setStep(slides.length - 1);
+    }
+    setTransform(-100 * (step - 1));
+    if (step === 1 && transition === 'transitionOn') {
+      setTimeout(() => {
+        setTransition('transitionOff');
+        setStep(slides.length - 2);
+        setTransform(-100 * (slides.length - 2));
+      }, 300);
+    } else if (step === 1 && transition === 'transitionOff') {
+      setTransition('transitionOn');
+      setTimeout(() => {
+        setTransition('transitionOff');
+        setStep(slides.length - 2);
+        setTransform(-100 * (slides.length - 2));
+      }, 300);
+    } else {
+      setTransition('transitionOn');
+    }
+  };
+
+  const dropDownClickRight = () => {
+    setStep(step + 1);
+    if (step === slides.length - 1) {
+      setStep(1);
+    }
+    setTransform(-100 * (step + 1));
+    if (step === (slides.length - 2) && transition === 'transitionOn') {
+      setTimeout(() => {
+        setTransition('transitionOff');
+        setTransform(-100);
+        setStep(1);
+      }, 300);
+    } else if (step === (slides.length - 2) && transition === 'transitionOff') {
+      setTransition('transitionOn');
+      setTimeout(() => {
+        setTransition('transitionOff');
+        setTransform(-100);
+        setStep(1);
+      }, 300);
+    } else {
+      setTransition('transitionOn');
+    }
   };
 
   return (
     <div className="slider">
-      <div
-        className={isDirectionRight ? 'slider-img-prev' : 'slider-img-next'}
-        key={prevImgIndex}
-      >
-        {img[prevImgIndex]}
-      </div>
-      <div
-        className="slider-img"
-        key={activeIndex}
-      >
-        {img[activeIndex]}
-      </div>
-      <div
-        className={isDirectionRight ? 'slider-img-next' : 'slider-img-prev'}
-        key={nextImgIndex}
-      >
-        {img[nextImgIndex]}
-      </div>
+      {slides.map((item) => (
+        <div
+          className={`slider__slide${transform}-${transition}`}
+          key={item.key}
+        >
+          {item}
+          <CarouselText title={title} subtitle={subtitle} />
+        </div>
+      ))}
       <div className="slider__buttons">
         <Button className="button-big" arrowDirection="arrow arrow-left arrow-big" onClick={() => dropDownClickLeft()} />
         <Button className="button-big" arrowDirection="arrow arrow-right arrow-big" onClick={() => dropDownClickRight()} />
