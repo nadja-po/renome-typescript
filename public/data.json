@@ -1,0 +1,104 @@
+
+    {  
+    "logoText": "Renome", 
+
+    "carouselTitle": "Made with love",
+
+    "carouselSubtitle": "for you",
+
+    "menuItems": [
+        {
+            "id": "1",
+            "title": "home",
+            "url": "#"
+        },
+        {
+            "id": "2",
+            "title": "about",
+            "url": "#"
+        },
+        {
+            "id": "3",
+            "title": "menu",
+            "url": "#"
+        },
+        {
+            "id": "4",
+            "title": "reservations",
+            "url": "#"
+        },
+        {
+            "id": "5",
+            "title": "blog",
+            "url": "#"
+        },
+        {
+            "id": "6",
+            "title": "features",
+            "url": "#",
+            "button": "true", 
+            "onclick": "true"
+        },
+        {
+            "id": "7",
+            "title": "shop",
+            "url": "#"
+        },
+        {
+            "id": "8",
+            "title": "contact",
+            "url": "#"
+        }
+        ],
+
+    "submenuItems": [
+        {
+            "id": "1",
+            "title": "back",
+            "url": "#",
+            "button": "true",
+            "onclick": "true"
+        },
+        {
+            "id": "2",
+            "title": "One page",
+            "url": "#"
+        },
+        {
+            "id": "3",
+            "title": "Portfolio",
+            "url": "#"
+        },
+        {
+            "id": "4",
+            "title": "Shortcodes",
+            "url": "#"
+        }
+    ],
+
+    "cartItems": [
+        {
+            "id": "1",
+            "title": "$44.50",
+            "url": "#"
+        },
+        {
+            "id": "2",
+            "title": "View Cart",
+            "url": "#"
+        },
+        {
+            "id": "3",
+            "title": "Checkout",
+            "url": "#"
+        }
+    ],
+
+    "carouselImages": [
+        {
+            "id": "1",
+            "src": "carousel_img_1.png",
+            "alt": "img1"
+        }
+    ]
+    }

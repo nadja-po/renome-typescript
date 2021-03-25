@@ -1,0 +1,11 @@
+.header {
+    background-color: var(--main-bg-color); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        padding: 0 15px;
+    }
+}

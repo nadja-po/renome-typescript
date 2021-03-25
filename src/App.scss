@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'Pacifico';
+    src: url('./fonts/Pacifico-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Bold.ttf')
+}
+:root {
+    --main-bg-color: #ffffff;
+    --footer-bg-color: #e5e9f1;   
+    --light-gray-color: #f4f6f9;
+    --main-color: #000000;
+    --main-border-color: #d3d3d3;
+    --brown-color: #8a4221;
+    --arrow-color: #808080;
+    --logo-font: 'Pacifico', cursive;
+    --main-title-font: 'Poppins', sans-serif;
+    --main-text-font: 'Montserrat', sans-serif;
+}
