@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/organisms/Navbar';
-import Carousel from './components/organisms/Carousel';
+import Body from './components/organisms/Body';
 import './App.scss';
 
 const App = () => {
@@ -15,8 +15,24 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Navbar logo={dataJson.logoText} cartItems={dataJson.cartItems} menuItems={dataJson.menuItems} submenuItems={dataJson.submenuItems} />
-      <Carousel title={dataJson.carouselTitle} subtitle={dataJson.carouselSubtitle} images={dataJson.carouselImages} />
+      <Navbar
+        logo={dataJson.logoText}
+        cartItems={dataJson.cartItems}
+        menuItems={dataJson.menuItems}
+        submenuItems={dataJson.submenuItems}
+      />
+      <Body
+        titleCarousel={dataJson.carouselTitle}
+        subtitleCarousel={dataJson.carouselSubtitle}
+        imagesCarousel={dataJson.carouselImages}
+        titleAbout={dataJson.aboutTitle}
+        subtitleAbout={dataJson.aboutSubtitle}
+        imagesAbout={dataJson.aboutImages}
+        textAbout={dataJson.aboutText}
+        titleGallery={dataJson.galleryTitle}
+        subtitleGallery={dataJson.gallerySubtitle}
+        imagesGallery={dataJson.galleryImages}
+      />
     </div>
   );
 };

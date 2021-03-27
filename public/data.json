@@ -1,10 +1,20 @@
 
-    {  
+{  
     "logoText": "Renome", 
 
     "carouselTitle": "Made with love",
 
     "carouselSubtitle": "for you",
+
+    "aboutTitle": "about",
+
+    "aboutSubtitle": "we create delicious memories",
+
+    "galleryTitle": "gallery",
+
+    "gallerySubtitle": "more about us via photos",
+
+    "aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nibh purus, vestibulum at finibus ut, porta vel odio. Curabitur vitae elit sollicitudin, suscipit urna in, bibendum enim. Mauris blandit consequat elit, ac laoreet augue sodales nec. Aliquam venenatis purus a enim molestie fringilla. Mauris ac nibh ligula. Phasellus vulputate vel neque nec convallis. Vestibulum egestas mattis nulla eget auctor. Sed ac tortor ante. Quisque nec neque tellus.", 
 
     "menuItems": [
         {
@@ -110,5 +120,49 @@
             "src": "carousel_img_3.png",
             "alt": "img3"
         }
+    ],
+    
+    "aboutImages": [
+        {
+            "src": "about_img_1.png",
+            "alt": "about image 1"
+        },
+        {
+            "src": "about_img_2.png",
+            "alt": "about image 2"
+        }
+    ],
+
+    "galleryImages": [
+        {
+            "id": "1",
+            "src": "gallery_img_1.png",
+            "alt": "gallery image 1"
+        },
+        {
+            "id": "2",
+            "src": "gallery_img_2.png",
+            "alt": "gallery image 2"
+        },
+        {
+            "id": "3",
+            "src": "gallery_img_3.png",
+            "alt": "gallery image 3"
+        },
+        {
+            "id": "4",
+            "src": "gallery_img_4.png",
+            "alt": "gallery image 4"
+        },
+        {
+            "id": "5",
+            "src": "gallery_img_5.png",
+            "alt": "gallery image 5"
+        },
+        {
+            "id": "6",
+            "src": "gallery_img_6.png",
+            "alt": "gallery image 6"
+        }
     ]
-    }
+}
