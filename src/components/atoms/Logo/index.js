@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
 
-const Logo = ({ text }) => (
-  <h1 className="logo">{text}</h1>
+const Logo = ({ text, logoVariant }) => (
+  <h1 className={logoVariant ? `logo-${logoVariant}` : 'logo'}>{text}</h1>
 );
 
 export default Logo;

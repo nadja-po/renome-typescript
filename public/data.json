@@ -16,6 +16,10 @@
 
     "aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nibh purus, vestibulum at finibus ut, porta vel odio. Curabitur vitae elit sollicitudin, suscipit urna in, bibendum enim. Mauris blandit consequat elit, ac laoreet augue sodales nec. Aliquam venenatis purus a enim molestie fringilla. Mauris ac nibh ligula. Phasellus vulputate vel neque nec convallis. Vestibulum egestas mattis nulla eget auctor. Sed ac tortor ante. Quisque nec neque tellus.", 
 
+    "footerText": "follow us:",
+
+    "footerCopyright": "copyright 2015 renome by estetiq",
+
     "menuItems": [
         {
             "id": "1",
@@ -163,6 +167,24 @@
             "id": "6",
             "src": "gallery_img_6.png",
             "alt": "gallery image 6"
+        }
+    ],
+
+    "footerIcons": [
+        {
+            "id": "1",
+            "src": "facebook.svg",
+            "alt": "facebook icon"
+        },
+        {
+            "id": "2",
+            "src": "twitter.svg",
+            "alt": "twitter icon"
+        },
+        {
+            "id": "3",
+            "src": "google+.svg",
+            "alt": "google icon"
         }
     ]
 }
