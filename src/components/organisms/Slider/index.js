@@ -4,13 +4,8 @@ import CarouselText from '../../molecules/CarouselText';
 import './style.scss';
 
 const Slider = ({ title, subtitle, images }) => {
-  const slides = images ? [
-    <img key="1" src={require(`../../../${images[2].src}`).default} alt={images[2].alt} />,
-    <img key="2" src={require(`../../../${images[0].src}`).default} alt={images[0].alt} />,
-    <img key="3" src={require(`../../../${images[1].src}`).default} alt={images[1].alt} />,
-    <img key="4" src={require(`../../../${images[2].src}`).default} alt={images[2].alt} />,
-    <img key="5" src={require(`../../../${images[0].src}`).default} alt={images[0].alt} />,
-  ] : [];
+  const slides = images && images.map((item) => (
+    <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} />));
 
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');
@@ -66,7 +61,7 @@ const Slider = ({ title, subtitle, images }) => {
 
   return (
     <div className="slider">
-      {slides.map((item) => (
+      {slides && slides.map((item) => (
         <div
           className={`slider__slide--${transition}`}
           style={{ transform: `translateX(${transform}%)` }}
