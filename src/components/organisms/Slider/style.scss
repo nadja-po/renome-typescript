@@ -1,0 +1,30 @@
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    &__slide--transitionOff {
+        position: relative;
+        min-width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    &__slide--transitionOn {
+        @extend .slider__slide--transitionOff;
+        transition: 0.3s;
+    }
+
+    &__buttons {
+        position: absolute;
+        top: 70%;
+        left: 8%;
+        z-index: 10;
+    }
+}
+
+
+
