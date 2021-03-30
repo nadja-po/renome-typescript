@@ -4,9 +4,7 @@ import CarouselText from '../../molecules/CarouselText';
 import './style.scss';
 
 const Slider = ({ title, subtitle, images }) => {
-  const slides = images && images.map((item) => (
-    <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} />));
-
+  const slidesLength = images && images.length;
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -14,21 +12,21 @@ const Slider = ({ title, subtitle, images }) => {
   const clickLeft = () => {
     setCurrentSlide(currentSlide - 1);
     if (currentSlide < 1) {
-      setCurrentSlide(slides.length - 1);
+      setCurrentSlide(slidesLength - 1);
     }
     setTransform(-100 * (currentSlide - 1));
     if (currentSlide === 1 && transition === 'transition-on') {
       setTimeout(() => {
         setTransition('transition-off');
-        setCurrentSlide(slides.length - 2);
-        setTransform(-100 * (slides.length - 2));
+        setCurrentSlide(slidesLength - 2);
+        setTransform(-100 * (slidesLength - 2));
       }, 300);
     } else if (currentSlide === 1 && transition === 'transition-off') {
       setTransition('transition-on');
       setTimeout(() => {
         setTransition('transition-off');
-        setCurrentSlide(slides.length - 2);
-        setTransform(-100 * (slides.length - 2));
+        setCurrentSlide(slidesLength - 2);
+        setTransform(-100 * (slidesLength - 2));
       }, 300);
     } else {
       setTransition('transition-on');
@@ -37,17 +35,17 @@ const Slider = ({ title, subtitle, images }) => {
 
   const clickRight = () => {
     setCurrentSlide(currentSlide + 1);
-    if (currentSlide === slides.length - 1) {
+    if (currentSlide === slidesLength - 1) {
       setCurrentSlide(1);
     }
     setTransform(-100 * (currentSlide + 1));
-    if (currentSlide === (slides.length - 2) && transition === 'transition-on') {
+    if (currentSlide === (slidesLength - 2) && transition === 'transition-on') {
       setTimeout(() => {
         setTransition('transition-off');
         setTransform(-100);
         setCurrentSlide(1);
       }, 300);
-    } else if (currentSlide === (slides.length - 2) && transition === 'transition-off') {
+    } else if (currentSlide === (slidesLength - 2) && transition === 'transition-off') {
       setTransition('transition-on');
       setTimeout(() => {
         setTransition('transition-off');
@@ -61,13 +59,13 @@ const Slider = ({ title, subtitle, images }) => {
 
   return (
     <div className="slider">
-      {slides && slides.map((item) => (
+      {images && images.map((item) => (
         <div
           className={`slider__slide--${transition}`}
           style={{ transform: `translateX(${transform}%)` }}
-          key={item.key}
+          key={item.id}
         >
-          {item}
+          <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} />
           <CarouselText title={title} subtitle={subtitle} />
         </div>
       ))}
