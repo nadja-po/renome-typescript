@@ -6,15 +6,15 @@
     display: flex;
     align-items: center;
 
-    &__slide--transitionOff {
+    &__slide--transition-off {
         position: relative;
         min-width: 100%;
         height: auto;
         overflow: hidden;
     }
 
-    &__slide--transitionOn {
-        @extend .slider__slide--transitionOff;
+    &__slide--transition-on {
+        @extend .slider__slide--transition-off;
         transition: 0.3s;
     }
 

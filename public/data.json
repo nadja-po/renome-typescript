@@ -96,7 +96,6 @@
 
     "carouselImages": [
         {
-<<<<<<< HEAD
             "src": "images/carousel_img_1.png",
             "alt": "img1"
         },
@@ -106,17 +105,6 @@
         },
         {
             "src": "images/carousel_img_3.png",
-=======
-            "src": "carousel_img_1.png",
-            "alt": "img1"
-        },
-        {
-            "src": "carousel_img_2.png",
-            "alt": "img2"
-        },
-        {
-            "src": "carousel_img_3.png",
->>>>>>> 807004a959497e12e9a29763751c15e848deb055
             "alt": "img3"
         }
     ]

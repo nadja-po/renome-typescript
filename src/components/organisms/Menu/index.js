@@ -47,7 +47,7 @@ const Menu = ({
             <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
               <a className="header__link" href={item.url}>
                 {item.title}
-                {item.button ? <Button className="button button--small button--link" arrowDirection="right" /> : null }
+                {item.button ? <Button className="button button__link" arrowDirection="right" /> : null }
               </a>
             </li>
           ))}
@@ -55,7 +55,7 @@ const Menu = ({
             {submenuItems && submenuItems.map((item) => (
               <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
                 <a className="header__sublink" href={item.url}>
-                  {item.button ? <Button className="button button--small button--sublink" arrowDirection="left" /> : null }
+                  {item.button ? <Button className="button button__sublink" arrowDirection="left" /> : null }
                   {item.title}
                 </a>
               </li>

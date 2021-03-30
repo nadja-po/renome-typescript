@@ -15,12 +15,12 @@
         outline: none;
     }
 
-    &--link {
+    &__link {
         right: 25px;
         top: 338px;
     }
 
-    &--sublink {
+    &__sublink {
         left: 25px;
     }
 }
@@ -32,19 +32,16 @@
     padding: 4px;
 
     &--left {
-        @extend .arrow;
         transform: rotate(135deg);
         margin-left: 5px;
     }
 
     &--right {
-        @extend .arrow;
         transform: rotate(-45deg);
         margin-right: 5px;
     }
 
     &--big {
-        @extend .arrow;
         padding: 6px;
         border: solid var(--light-gray-color);
         border-width: 0 3px 3px 0;

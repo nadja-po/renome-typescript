@@ -13,7 +13,7 @@ const Slider = ({ title, subtitle, images }) => {
   ] : [];
 
   const [transform, setTransform] = useState(-100);
-  const [transition, setTransition] = useState('transitionOn');
+  const [transition, setTransition] = useState('transition-on');
   const [currentSlide, setCurrentSlide] = useState(1);
 
   const clickLeft = () => {
@@ -22,21 +22,21 @@ const Slider = ({ title, subtitle, images }) => {
       setCurrentSlide(slides.length - 1);
     }
     setTransform(-100 * (currentSlide - 1));
-    if (currentSlide === 1 && transition === 'transitionOn') {
+    if (currentSlide === 1 && transition === 'transition-on') {
       setTimeout(() => {
-        setTransition('transitionOff');
+        setTransition('transition-off');
         setCurrentSlide(slides.length - 2);
         setTransform(-100 * (slides.length - 2));
       }, 300);
-    } else if (currentSlide === 1 && transition === 'transitionOff') {
-      setTransition('transitionOn');
+    } else if (currentSlide === 1 && transition === 'transition-off') {
+      setTransition('transition-on');
       setTimeout(() => {
-        setTransition('transitionOff');
+        setTransition('transition-off');
         setCurrentSlide(slides.length - 2);
         setTransform(-100 * (slides.length - 2));
       }, 300);
     } else {
-      setTransition('transitionOn');
+      setTransition('transition-on');
     }
   };
 
@@ -46,21 +46,21 @@ const Slider = ({ title, subtitle, images }) => {
       setCurrentSlide(1);
     }
     setTransform(-100 * (currentSlide + 1));
-    if (currentSlide === (slides.length - 2) && transition === 'transitionOn') {
+    if (currentSlide === (slides.length - 2) && transition === 'transition-on') {
       setTimeout(() => {
-        setTransition('transitionOff');
+        setTransition('transition-off');
         setTransform(-100);
         setCurrentSlide(1);
       }, 300);
-    } else if (currentSlide === (slides.length - 2) && transition === 'transitionOff') {
-      setTransition('transitionOn');
+    } else if (currentSlide === (slides.length - 2) && transition === 'transition-off') {
+      setTransition('transition-on');
       setTimeout(() => {
-        setTransition('transitionOff');
+        setTransition('transition-off');
         setTransform(-100);
         setCurrentSlide(1);
       }, 300);
     } else {
-      setTransition('transitionOn');
+      setTransition('transition-on');
     }
   };
 
@@ -77,8 +77,8 @@ const Slider = ({ title, subtitle, images }) => {
         </div>
       ))}
       <div className="slider__buttons">
-        <Button className="button--big" arrowDirection="left" onClick={() => clickLeft()} />
-        <Button className="button--big" arrowDirection="right" onClick={() => clickRight()} />
+        <Button className="button" size="big" arrowDirection="left" onClick={() => clickLeft()} />
+        <Button className="button" size="big" arrowDirection="right" onClick={() => clickRight()} />
       </div>
     </div>
   );
