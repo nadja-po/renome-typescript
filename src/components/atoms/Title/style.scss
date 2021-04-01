@@ -4,7 +4,7 @@
     font-size: 27px;
     letter-spacing: 3px;
 
-    &-subtitle {
+    &--subtitle {
         font-family: var(--main-title-font);
         color: var(--brown-color);
         font-size: 24px;
@@ -12,7 +12,7 @@
         line-height: 5px;
 
         &-small {
-            @extend .title-subtitle;
+            @extend .title--subtitle;
             font-family: var(--main-text-font);
             font-size: 12px;
             letter-spacing: 1px;
@@ -20,7 +20,7 @@
             line-height: 15px;
 
             &-black {
-                @extend .title-subtitle-small;
+                @extend .title--subtitle-small;
                 color: var(--main-color);
             }
         }

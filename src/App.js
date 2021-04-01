@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/organisms/Navbar';
 import Body from './components/organisms/Body';
+import Slider from './components/organisms/Slider';
 import Footer from './components/molecules/Footer';
 import './App.scss';
 
@@ -22,10 +23,12 @@ const App = () => {
         menuItems={dataJson.menuItems}
         submenuItems={dataJson.submenuItems}
       />
-      <Body
+      <Slider
         titleCarousel={dataJson.carouselTitle}
         subtitleCarousel={dataJson.carouselSubtitle}
         imagesCarousel={dataJson.carouselImages}
+      />
+      <Body
         titleAbout={dataJson.aboutTitle}
         subtitleAbout={dataJson.aboutSubtitle}
         imagesAbout={dataJson.aboutImages}

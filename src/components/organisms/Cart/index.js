@@ -21,7 +21,7 @@ const Cart = ({
         <Icon src={cart} alt="cart" />
         <div className="header__count">2</div>
       </button>
-      <ul className={(isCartVisible && !isMenuVisible) ? 'header__cartlist active' : 'header__cartlist'}>
+      <ul className={(isCartVisible && !isMenuVisible) ? 'header__cartlist--active' : 'header__cartlist'}>
         {cartItems && cartItems.map((item) => (
           <li key={item.id}>
             <a className="header__cartlink" href={item.url}>
