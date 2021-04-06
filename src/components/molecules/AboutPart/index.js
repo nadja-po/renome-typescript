@@ -4,17 +4,17 @@ import Text from '../../atoms/Text';
 import './style.scss';
 
 function AboutPart({
-  title, subtitle, text, images,
+  titleAbout, subtitleAbout, textAbout, imagesAbout,
 }) {
   return (
     <div className="about-part">
       <div className="about-part__img-container">
-        <img src={images && require(`../../../images/${images[0].src}`).default} alt={images && images[0].alt} className="about-part__img-container__img1" />
-        <img src={images && require(`../../../images/${images[1].src}`).default} alt={images && images[1].alt} className="about-part__img-container__img2" />
+        <img src={imagesAbout && require(`../../../images/${imagesAbout[0].src}`).default} alt={imagesAbout && imagesAbout[0].alt} className="about-part__img-container__img1" />
+        <img src={imagesAbout && require(`../../../images/${imagesAbout[1].src}`).default} alt={imagesAbout && imagesAbout[1].alt} className="about-part__img-container__img2" />
       </div>
-      <Title title={title} titleVariant="black" />
-      <Title title={subtitle} titleVariant="subtitle-small" />
-      <Text text={text} />
+      <Title title={titleAbout} titleVariant="black" />
+      <Title title={subtitleAbout} titleVariant="subtitle--small" />
+      <Text text={textAbout} />
     </div>
   );
 }

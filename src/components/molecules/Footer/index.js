@@ -9,7 +9,7 @@ function Footer({
 }) {
   return (
     <div className="footer">
-      <Title title={textFooter} titleVariant="subtitle-small-black" />
+      <Title title={textFooter} titleVariant="subtitle--small--black" />
       <div className="">
         {iconsFooter && iconsFooter.map((item, index) => (
           <a href="#" key={item.id}>
@@ -22,7 +22,7 @@ function Footer({
         ))}
       </div>
       <Logo text={logo} logoVariant="small" />
-      <Title title={copyrightFooter} titleVariant="subtitle-small-black" />
+      <Title title={copyrightFooter} titleVariant="subtitle--small--black" />
     </div>
   );
 }

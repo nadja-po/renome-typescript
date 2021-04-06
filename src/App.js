@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/organisms/Navbar';
-import Body from './components/organisms/Body';
 import Slider from './components/organisms/Slider';
+import AboutPart from './components/molecules/AboutPart';
 import Footer from './components/molecules/Footer';
+import Gallery from './components/molecules/Gallery';
 import './App.scss';
 
 const App = () => {
@@ -28,11 +29,13 @@ const App = () => {
         subtitleCarousel={dataJson.carouselSubtitle}
         imagesCarousel={dataJson.carouselImages}
       />
-      <Body
+      <AboutPart
         titleAbout={dataJson.aboutTitle}
         subtitleAbout={dataJson.aboutSubtitle}
         imagesAbout={dataJson.aboutImages}
         textAbout={dataJson.aboutText}
+      />
+      <Gallery
         titleGallery={dataJson.galleryTitle}
         subtitleGallery={dataJson.gallerySubtitle}
         imagesGallery={dataJson.galleryImages}
