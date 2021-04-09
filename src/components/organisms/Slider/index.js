@@ -3,8 +3,8 @@ import Button from '../../atoms/Button';
 import CarouselText from '../../molecules/CarouselText';
 import './style.scss';
 
-const Slider = ({ title, subtitle, images }) => {
-  const slidesLength = images && images.length;
+const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }) => {
+  const slidesLength = imagesCarousel && imagesCarousel.length;
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -59,14 +59,14 @@ const Slider = ({ title, subtitle, images }) => {
 
   return (
     <div className="slider">
-      {images && images.map((item) => (
+      {imagesCarousel && imagesCarousel.map((item) => (
         <div
           className={`slider__slide--${transition}`}
           style={{ transform: `translateX(${transform}%)` }}
           key={item.id}
         >
-          <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} />
-          <CarouselText title={title} subtitle={subtitle} />
+          <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} className="slider__slide__img" />
+          <CarouselText title={titleCarousel} subtitle={subtitleCarousel} />
         </div>
       ))}
       <div className="slider__buttons">

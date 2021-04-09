@@ -2,4 +2,13 @@
     width: 21px;
     height: 21px;
     padding-right: 5px;
+
+    &-rounded {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid var(--main-color);
+        padding: 5px;
+        margin: 5px;
+    }
 }

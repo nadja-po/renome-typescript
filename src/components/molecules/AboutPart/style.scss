@@ -1,0 +1,24 @@
+.about-part {
+    position: relative;
+    margin: 30px 10px;
+
+    &__img-container {
+        position: relative;
+        height: 285px;
+
+        &__img1 {
+            position: absolute;
+            left: 0;
+            top: 125px;
+            z-index: 10;
+            height: 150px;
+        }
+    
+        &__img2 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 150px;
+        }
+    }
+}

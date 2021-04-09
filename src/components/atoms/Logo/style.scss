@@ -4,4 +4,9 @@
     font-weight: 200;
     font-size: 32px;
     justify-self: start;
+
+    &-small {
+        @extend .logo;
+        font-size: 24px;
+    }
 }
