@@ -5,8 +5,10 @@ import './style.scss';
 function Gallery({ titleGallery, subtitleGallery, imagesGallery }) {
   return (
     <div className="gallery">
-      <Title title={titleGallery} titleVariant="black" />
-      <Title title={subtitleGallery} titleVariant="subtitle--small" />
+      <div className="gallery__text">
+        <Title title={titleGallery} titleVariant="black" />
+        <Title title={subtitleGallery} titleVariant="subtitle--small" />
+      </div>
       <div className="gallery__photos">
         {imagesGallery && imagesGallery.map((item, index) => (
           <img

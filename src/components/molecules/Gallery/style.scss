@@ -13,6 +13,27 @@
             width: 95%;
             padding: 5px;
             justify-self: center;
+            transition: width 0.5s ease;
         }
     }
+}
+
+@media (min-width: 768px){
+    .gallery {
+        display: flex; 
+        flex-direction: row;
+
+        &__photos {
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-right: 15%;
+        }
+
+        &__text {
+            width: 30%;
+            flex: 1 0;
+            padding-left: 10%;
+            margin-top: auto;
+            margin-bottom: auto
+        }
+    }   
 }

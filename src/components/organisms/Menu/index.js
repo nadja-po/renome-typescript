@@ -27,6 +27,7 @@ const Menu = ({
     const isVisible = !isSubmenuVisible;
     setSubmenuIsVisible(isVisible);
     setMenuIsVisible(false);
+    updateCartState(false);
     if (isSubmenuVisible === true) {
       setSubmenuIsVisible(false);
       setMenuIsVisible(true);
@@ -39,7 +40,7 @@ const Menu = ({
         <Icon src={isMenuVisible || isSubmenuVisible ? close : burger} alt="burger" />
       </button>
       <div className={isMenuVisible && !isCartVisible ? 'header__menu--active' : 'header__menu'}>
-        <ul className="header__list">
+        <ul className="header__menu__list">
           <li>
             <FormSearch />
           </li>
@@ -51,7 +52,7 @@ const Menu = ({
               </a>
             </li>
           ))}
-          <ul className={isSubmenuVisible && !isCartVisible ? 'header__submenu--active' : 'header__submenu'}>
+          <ul className={isSubmenuVisible && !isCartVisible ? 'header__menu__list__submenu--active' : 'header__menu__list__submenu'}>
             {submenuItems && submenuItems.map((item) => (
               <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
                 <a className="header__sublink" href={item.url}>

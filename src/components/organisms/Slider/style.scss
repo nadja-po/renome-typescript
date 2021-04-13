@@ -30,6 +30,18 @@
         width: 100%;
     }
 }
+@media (min-width: 768px){
+    .slider {
+        background-image: url("../../../images/desktop.png");
+        height: 40vw; 
+        background-size: cover;
 
-
-
+        &__buttons {
+            display: none;
+        }
+    
+        &__slide__img {
+            display: none;
+        }
+    }
+}
