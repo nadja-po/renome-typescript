@@ -41,11 +41,11 @@ const Menu = ({
       </button>
       <div className={isMenuVisible && !isCartVisible ? 'header__menu--active' : 'header__menu'}>
         <ul className="header__menu__list">
-          <li>
+          <li className="header__menu__list__item">
             <FormSearch />
           </li>
           {menuItems && menuItems.map((item) => (
-            <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
+            <li className="header__menu__list__item" key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
               <a className="header__link" href={item.url}>
                 {item.title}
                 {item.button ? <Button className="button button__link" arrowDirection="right" /> : null }
@@ -54,7 +54,7 @@ const Menu = ({
           ))}
           <ul className={isSubmenuVisible && !isCartVisible ? 'header__menu__list__submenu--active' : 'header__menu__list__submenu'}>
             {submenuItems && submenuItems.map((item) => (
-              <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
+              <li className="header__menu__list__submenu__item" key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
                 <a className="header__sublink" href={item.url}>
                   {item.button ? <Button className="button button__sublink" arrowDirection="left" /> : null }
                   {item.title}

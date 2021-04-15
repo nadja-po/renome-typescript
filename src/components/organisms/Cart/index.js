@@ -23,7 +23,7 @@ const Cart = ({
       </button>
       <ul className={(isCartVisible && !isMenuVisible) ? 'header__cartlist--active' : 'header__cartlist'}>
         {cartItems && cartItems.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="header__cartlist__item">
             <a className="header__cartlink" href={item.url}>
               {item.title}
             </a>
