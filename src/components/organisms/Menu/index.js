@@ -27,6 +27,7 @@ const Menu = ({
     const isVisible = !isSubmenuVisible;
     setSubmenuIsVisible(isVisible);
     setMenuIsVisible(false);
+    updateCartState(false);
     if (isSubmenuVisible === true) {
       setSubmenuIsVisible(false);
       setMenuIsVisible(true);
@@ -39,21 +40,21 @@ const Menu = ({
         <Icon src={isMenuVisible || isSubmenuVisible ? close : burger} alt="burger" />
       </button>
       <div className={isMenuVisible && !isCartVisible ? 'header__menu--active' : 'header__menu'}>
-        <ul className="header__list">
-          <li>
+        <ul className="header__menu__list">
+          <li className="header__menu__list__item">
             <FormSearch />
           </li>
           {menuItems && menuItems.map((item) => (
-            <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
+            <li className="header__menu__list__item" key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
               <a className="header__link" href={item.url}>
                 {item.title}
                 {item.button ? <Button className="button button__link" arrowDirection="right" /> : null }
               </a>
             </li>
           ))}
-          <ul className={isSubmenuVisible && !isCartVisible ? 'header__submenu--active' : 'header__submenu'}>
+          <ul className={isSubmenuVisible && !isCartVisible ? 'header__menu__list__submenu--active' : 'header__menu__list__submenu'}>
             {submenuItems && submenuItems.map((item) => (
-              <li key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
+              <li className="header__menu__list__submenu__item" key={item.id} onClick={item.onclick ? () => showSubmenuClickHandler(isSubmenuVisible) : null}>
                 <a className="header__sublink" href={item.url}>
                   {item.button ? <Button className="button button__sublink" arrowDirection="left" /> : null }
                   {item.title}

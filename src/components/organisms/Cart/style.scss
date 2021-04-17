@@ -31,7 +31,7 @@
             display: block;
         }
     
-        li {
+        &__item {
             list-style: none;
             margin: 10px;
             text-align: center;
@@ -49,5 +49,16 @@
         &:hover {
             color: var(--brown-color);
         }
+    }
+}
+
+@media (min-width: 768px){
+    .header__cart {
+        margin-top: 10px;
+    }
+
+    .header__cartlist {
+        top: unset;
+        right: unset;
     }
 }

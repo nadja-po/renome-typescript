@@ -5,3 +5,11 @@
     text-align: left;
     z-index: 10;
 }
+
+@media (min-width: 768px){
+    .carousel__text {
+        position: unset;
+        margin-top: 28%;
+        margin-left: 65%;
+    }
+}

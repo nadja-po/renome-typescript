@@ -16,8 +16,8 @@
     }
 
     &__link {
-        right: 25px;
-        top: 338px;
+        position: relative;
+        float: right;
     }
 
     &__sublink {
@@ -45,5 +45,17 @@
         padding: 6px;
         border: solid var(--light-gray-color);
         border-width: 0 3px 3px 0;
+    }
+}
+
+@media (min-width: 768px){
+    .button {
+        &__link {
+            display: none;
+        }
+    
+        &__sublink {
+            display: none;
+        }
     }
 }

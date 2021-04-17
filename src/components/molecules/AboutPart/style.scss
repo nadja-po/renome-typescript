@@ -22,3 +22,29 @@
         }
     }
 }
+@media (min-width: 768px){
+    .about-part {
+        display: flex; 
+        flex-direction: row;
+        height: auto;
+
+        &__img-container {
+            flex: 1 0;
+            height: 370px;
+
+            &__img1 {
+                left: 25%;
+                height: 200px;
+                top: 170px;
+            }
+            &__img2 {
+                right: 25%;
+                height: 200px;
+            }
+        }
+        &__text-container {
+            width: 30%;
+            padding-right: 15%;
+        }
+    }
+}
