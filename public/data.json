@@ -111,28 +111,18 @@
     "carouselImages": [
         {
             "id": "1",
-            "src": "images/carousel_img_3.png",
-            "alt": "img3"
-        },
-        {
-            "id": "2",
             "src": "images/carousel_img_1.png",
             "alt": "img1"
         },
         {
-            "id": "3",
+            "id": "2",
             "src": "images/carousel_img_2.png",
             "alt": "img2"
         },
         {
-            "id": "4",
+            "id": "3",
             "src": "images/carousel_img_3.png",
             "alt": "img3"
-        },
-        {
-            "id": "5",
-            "src": "images/carousel_img_1.png",
-            "alt": "img1"
         }
     ],
     
