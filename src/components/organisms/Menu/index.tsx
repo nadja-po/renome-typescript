@@ -6,24 +6,31 @@ import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 import './style.scss';
 
-const Menu = ({
+type Props = {
+  updateCartState: React.Dispatch<React.SetStateAction<boolean>>,
+  updateMenuState: React.Dispatch<React.SetStateAction<boolean>>,
+  isCartVisible: boolean,
+  menuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+  submenuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+}
+
+const Menu: Function = ({
   updateMenuState, updateCartState, isCartVisible, menuItems, submenuItems,
-}) => {
+}: Props) => {
   const [isMenuVisible, setMenuIsVisible] = useState(false);
   const [isSubmenuVisible, setSubmenuIsVisible] = useState(false);
 
-  const dropDownClickHandler = (isMenuVisible, isSubmenuVisible) => {
-    const isVisible = !isMenuVisible;
-    updateMenuState(isVisible);
+  const dropDownClickHandler: Function = (isMenuVisible: boolean, isSubmenuVisible: boolean) => {
+    updateMenuState(!isMenuVisible);
     updateCartState(false);
-    setMenuIsVisible(isVisible);
+    setMenuIsVisible(!isMenuVisible);
     if (isSubmenuVisible === true) {
       setSubmenuIsVisible(false);
       setMenuIsVisible(false);
     }
   };
 
-  const showSubmenuClickHandler = (isSubmenuVisible) => {
+  const showSubmenuClickHandler: Function = (isSubmenuVisible: boolean) => {
     const isVisible = !isSubmenuVisible;
     setSubmenuIsVisible(isVisible);
     setMenuIsVisible(false);

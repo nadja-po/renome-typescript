@@ -3,21 +3,25 @@ import Icon from '../../atoms/Icon';
 import cart from '../../../images/cart.svg';
 import './style.scss';
 
-const Cart = ({
-  updateCartState, updateMenuState, isMenuVisible, cartItems,
-}) => {
-  const [isCartVisible, setCartIsVisible] = useState(false);
+type Props = {
+  updateCartState: React.Dispatch<React.SetStateAction<boolean>>,
+  updateMenuState: React.Dispatch<React.SetStateAction<boolean>>,
+  isMenuVisible: boolean,
+  cartItems: Array<{ id: number, title: string, url: string }>,
+}
 
-  const dropDownClickHandler = (isCartVisible) => {
-    const isVisible = !isCartVisible;
-    updateCartState(isVisible);
+const Cart: Function = ({ updateCartState, updateMenuState, isMenuVisible, cartItems }: Props) => {
+  const [isCartVisible, setCartIsVisible] = useState<boolean>(false);
+
+  const dropDownClickHandler: Function = (isCartVisible: boolean) => {
+    updateCartState(!isCartVisible);
     updateMenuState(false);
-    setCartIsVisible(isVisible);
+    setCartIsVisible(!isCartVisible);
   };
 
   return (
     <div>
-      <button type="button" className="header__cart" onClick={() => dropDownClickHandler(isCartVisible, isMenuVisible)}>
+      <button type="button" className="header__cart" onClick={() => dropDownClickHandler(isCartVisible)}>
         <Icon src={cart} alt="cart" />
         <div className="header__count">2</div>
       </button>

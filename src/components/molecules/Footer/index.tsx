@@ -4,16 +4,21 @@ import Logo from '../../atoms/Logo';
 import Icon from '../../atoms/Icon';
 import './style.scss';
 
-function Footer({
-  textFooter, iconsFooter, logo, copyrightFooter,
-}) {
+type Props = {
+  textFooter: string,
+  iconsFooter: Array<{ id: number, src: string, alt: string }>,
+  logo: string,
+  copyrightFooter: string,
+} 
+
+const Footer: Function = ({ textFooter, iconsFooter, logo, copyrightFooter }: Props) => {
   return (
     <div className="footer">
       <div className="footer__icons">
         <Title title={textFooter} titleVariant="subtitle--small--black" />
         <div>
           {iconsFooter && iconsFooter.map((item, index) => (
-            <a href="#" key={item.id}>
+            <a href="/" key={item.id}>
               <Icon
                 iconVariant="rounded"
                 src={iconsFooter && require(`../../../images/${iconsFooter[index].src}`).default}

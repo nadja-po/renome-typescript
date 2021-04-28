@@ -4,16 +4,21 @@ import Menu from '../Menu';
 import Logo from '../../atoms/Logo';
 import './style.scss';
 
-const Navbar = ({
-  logo, cartItems, menuItems, submenuItems,
-}) => {
+type Props = {
+  logo: string,
+  cartItems: Array<{ id: number, title: string, url: string }>,
+  menuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+  submenuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+}
+
+const Navbar: Function = ({ logo, cartItems, menuItems, submenuItems }: Props) => {
   const [isCartVisible, setCartIsVisible] = useState(false);
   const [isMenuVisible, setMenuIsVisible] = useState(false);
 
-  const updateCartState = (value) => {
+  const updateCartState: React.Dispatch<React.SetStateAction<boolean>> = (value) => {
     setCartIsVisible(value);
   };
-  const updateMenuState = (value) => {
+  const updateMenuState: React.Dispatch<React.SetStateAction<boolean>> = (value) => {
     setMenuIsVisible(value);
   };
 

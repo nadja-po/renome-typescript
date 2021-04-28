@@ -3,21 +3,27 @@ import Button from '../../atoms/Button';
 import CarouselText from '../../molecules/CarouselText';
 import './style.scss';
 
-const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }) => {
-  const length = imagesCarousel && imagesCarousel.length;
+type Props = {
+  titleCarousel: string,
+  subtitleCarousel: string,
+  imagesCarousel: Array<{ id: number, src: string, alt: string }>,
+}
+
+const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }: Props) => {
+  const length: number = imagesCarousel && imagesCarousel.length;
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');
   const [currentSlide, setCurrentSlide] = useState(1);
 
-  let images = [];
+  let images: Array<JSX.Element> = [];
   images = imagesCarousel && imagesCarousel.map((item) => (
     <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} className="slider__slide__img" />
     ));
   imagesCarousel && images.push(<img src={require(`../../../${imagesCarousel[0].src}`).default} alt={imagesCarousel[0].alt} key={length+1} className="slider__slide__img" />);
   imagesCarousel && images.unshift(<img src={require(`../../../${imagesCarousel[length-1].src}`).default} alt={imagesCarousel[length-1].alt} key={0} className="slider__slide__img" />);
-  const slidesLength = images && images.length;
+  const slidesLength: number = images && images.length;
   
-  const clickLeft = () => {
+  const clickLeft: Function = () => {
     setCurrentSlide(currentSlide - 1);
     if (currentSlide < 1) {
       setCurrentSlide(slidesLength - 1);
@@ -41,7 +47,7 @@ const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }) => {
     }
   };
 
-  const clickRight = () => {
+  const clickRight: Function = () => {
     setCurrentSlide(currentSlide + 1);
     if (currentSlide === slidesLength - 1) {
       setCurrentSlide(1);

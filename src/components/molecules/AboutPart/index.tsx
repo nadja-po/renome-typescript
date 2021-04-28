@@ -3,9 +3,14 @@ import Title from '../../atoms/Title';
 import Text from '../../atoms/Text';
 import './style.scss';
 
-function AboutPart({
-  titleAbout, subtitleAbout, textAbout, imagesAbout,
-}) {
+type Props = {
+  titleAbout: string,
+  subtitleAbout: string,
+  textAbout: string,
+  imagesAbout: Array<{ src: string, alt: string }>,
+}
+
+const AboutPart: Function = ({ titleAbout, subtitleAbout, textAbout, imagesAbout }: Props) => {
   return (
     <div className="about-part">
       <div className="about-part__img-container">

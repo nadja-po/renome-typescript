@@ -6,9 +6,9 @@ import Footer from './components/molecules/Footer';
 import Gallery from './components/molecules/Gallery';
 import './App.scss';
 
-const App = () => {
-  const [dataJson, setDataJson] = useState([]);
-  const getData = () => {
+const App: React.FunctionComponent = () => {
+  const [dataJson, setDataJson] = useState<any>([]);
+  const getData: Function = () => {
     fetch('./data.json')
       .then((response) => response.json())
       .then((data) => setDataJson(data));
