@@ -1,1 +1,1 @@
-# renome-react
+# renome-typescript
