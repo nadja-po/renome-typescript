@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import Cart from '../Cart';
 import Menu from '../Menu';
 import Logo from '../../atoms/Logo';
+import { Items } from '../../../interface';
 import './style.scss';
 
-type Props = {
+type NavbarProps = {
   logo: string,
-  cartItems: Array<{ id: number, title: string, url: string }>,
-  menuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
-  submenuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+  cartItems: Items[],
+  menuItems: Items[],
+  submenuItems: Items[],
 }
 
-const Navbar: Function = ({ logo, cartItems, menuItems, submenuItems }: Props) => {
+const Navbar: Function = ({ logo, cartItems, menuItems, submenuItems }: NavbarProps) => {
   const [isCartVisible, setCartIsVisible] = useState(false);
   const [isMenuVisible, setMenuIsVisible] = useState(false);
 

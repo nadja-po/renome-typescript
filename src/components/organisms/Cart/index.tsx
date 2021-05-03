@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import Icon from '../../atoms/Icon';
+import { Items } from '../../../interface';
 import cart from '../../../images/cart.svg';
 import './style.scss';
 
-type Props = {
+type CartProps = {
   updateCartState: React.Dispatch<React.SetStateAction<boolean>>,
   updateMenuState: React.Dispatch<React.SetStateAction<boolean>>,
   isMenuVisible: boolean,
-  cartItems: Array<{ id: number, title: string, url: string }>,
+  cartItems: Items[],
 }
 
-const Cart: Function = ({ updateCartState, updateMenuState, isMenuVisible, cartItems }: Props) => {
+const Cart: Function = ({ updateCartState, updateMenuState, isMenuVisible, cartItems }: CartProps) => {
   const [isCartVisible, setCartIsVisible] = useState<boolean>(false);
 
   const dropDownClickHandler: Function = (isCartVisible: boolean) => {

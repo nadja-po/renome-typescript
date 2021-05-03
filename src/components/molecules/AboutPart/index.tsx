@@ -1,16 +1,17 @@
 import React from 'react';
 import Title from '../../atoms/Title';
 import Text from '../../atoms/Text';
+import { Images } from '../../../interface';
 import './style.scss';
 
-type Props = {
+type AboutPartProps = {
   titleAbout: string,
   subtitleAbout: string,
   textAbout: string,
-  imagesAbout: Array<{ src: string, alt: string }>,
+  imagesAbout: Images[],
 }
 
-const AboutPart: Function = ({ titleAbout, subtitleAbout, textAbout, imagesAbout }: Props) => {
+const AboutPart: Function = ({ titleAbout, subtitleAbout, textAbout, imagesAbout }: AboutPartProps) => {
   return (
     <div className="about-part">
       <div className="about-part__img-container">

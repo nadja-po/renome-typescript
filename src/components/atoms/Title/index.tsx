@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.scss';
 
-type Props = {
+type TitleProps = {
   title: string,
   titleVariant?: string,
 }
 
-const Title = ({ title, titleVariant }: Props) => (
+const Title = ({ title, titleVariant }: TitleProps) => (
   <h1 className={titleVariant ? `title--${titleVariant}` : 'title'}>
     { title }
   </h1>

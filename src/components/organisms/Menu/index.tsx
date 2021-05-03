@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import Icon from '../../atoms/Icon';
 import FormSearch from '../../atoms/FormSearch';
 import Button from '../../atoms/Button';
+import { Items } from '../../../interface';
 import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 import './style.scss';
 
-type Props = {
+type MenuProps = {
   updateCartState: React.Dispatch<React.SetStateAction<boolean>>,
   updateMenuState: React.Dispatch<React.SetStateAction<boolean>>,
   isCartVisible: boolean,
-  menuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
-  submenuItems: Array<{ id: number, title: string, url: string, button: boolean, onclick: boolean }>,
+  menuItems: Items[],
+  submenuItems: Items[]
 }
 
 const Menu: Function = ({
   updateMenuState, updateCartState, isCartVisible, menuItems, submenuItems,
-}: Props) => {
+}: MenuProps) => {
   const [isMenuVisible, setMenuIsVisible] = useState(false);
   const [isSubmenuVisible, setSubmenuIsVisible] = useState(false);
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.scss';
 
-type Props = {
+type IconProps = {
   src: string,
   alt: string,
   iconVariant?: string,
 }
 
-const Icon = ({ src, alt, iconVariant }: Props) => (
+const Icon = ({ src, alt, iconVariant }: IconProps) => (
   <img className={iconVariant ? `icon-${iconVariant}` : 'icon'} src={src} alt={alt} />
 );
 

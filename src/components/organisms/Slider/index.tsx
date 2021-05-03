@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Button from '../../atoms/Button';
 import CarouselText from '../../molecules/CarouselText';
+import { Images } from '../../../interface';
 import './style.scss';
 
-type Props = {
+type SliderProps = {
   titleCarousel: string,
   subtitleCarousel: string,
-  imagesCarousel: Array<{ id: number, src: string, alt: string }>,
+  imagesCarousel: Images[],
 }
 
-const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }: Props) => {
+const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }: SliderProps) => {
   const length: number = imagesCarousel && imagesCarousel.length;
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');

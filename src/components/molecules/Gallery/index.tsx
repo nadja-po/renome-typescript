@@ -1,14 +1,15 @@
 import React from 'react';
 import Title from '../../atoms/Title';
+import { Images } from '../../../interface';
 import './style.scss';
 
-type Props = {
+type GalleryProps = {
   titleGallery: string,
   subtitleGallery: string,
-  imagesGallery: Array<{ id: number, src: string, alt: string }>,
+  imagesGallery: Images[],
 }
 
-const Gallery: Function = ({ titleGallery, subtitleGallery, imagesGallery }: Props) => {
+const Gallery: Function = ({ titleGallery, subtitleGallery, imagesGallery }: GalleryProps) => {
   return (
     <div className="gallery">
       <div className="gallery__text">

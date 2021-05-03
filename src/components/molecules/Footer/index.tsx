@@ -2,16 +2,17 @@ import React from 'react';
 import Title from '../../atoms/Title';
 import Logo from '../../atoms/Logo';
 import Icon from '../../atoms/Icon';
+import { Images } from '../../../interface';
 import './style.scss';
 
-type Props = {
+type FooterProps = {
   textFooter: string,
-  iconsFooter: Array<{ id: number, src: string, alt: string }>,
+  iconsFooter: Images[],
   logo: string,
   copyrightFooter: string,
 } 
 
-const Footer: Function = ({ textFooter, iconsFooter, logo, copyrightFooter }: Props) => {
+const Footer: Function = ({ textFooter, iconsFooter, logo, copyrightFooter }: FooterProps) => {
   return (
     <div className="footer">
       <div className="footer__icons">

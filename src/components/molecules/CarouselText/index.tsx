@@ -2,12 +2,12 @@ import React from 'react';
 import Title from '../../atoms/Title';
 import './style.scss';
 
-type Props = {
+type CarouselTextProps = {
   title: string,
   subtitle: string,
 }
 
-const CarouselText: Function = ({ title, subtitle }: Props) => {
+const CarouselText: Function = ({ title, subtitle }: CarouselTextProps) => {
   return (
     <div className="carousel__text">
       <Title title={title} />
