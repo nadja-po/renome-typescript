@@ -5,9 +5,10 @@ import AboutPart from './components/molecules/AboutPart';
 import Footer from './components/molecules/Footer';
 import Gallery from './components/molecules/Gallery';
 import './App.scss';
+import { Data } from './interface'
 
 const App: React.FunctionComponent = () => {
-  const [dataJson, setDataJson] = useState<any>([]);
+  const [dataJson, setDataJson] = useState<Data>();
   const getData: Function = () => {
     fetch('./data.json')
       .then((response) => response.json())
@@ -19,32 +20,32 @@ const App: React.FunctionComponent = () => {
   return (
     <div className="App">
       <Navbar
-        logo={dataJson.logoText}
-        cartItems={dataJson.cartItems}
-        menuItems={dataJson.menuItems}
-        submenuItems={dataJson.submenuItems}
+        logo={dataJson?.logoText}
+        cartItems={dataJson?.cartItems}
+        menuItems={dataJson?.menuItems}
+        submenuItems={dataJson?.submenuItems}
       />
-      <Slider
-        titleCarousel={dataJson.carouselTitle}
-        subtitleCarousel={dataJson.carouselSubtitle}
-        imagesCarousel={dataJson.carouselImages}
-      />
+      {<Slider
+        titleCarousel={dataJson?.carouselTitle}
+        subtitleCarousel={dataJson?.carouselSubtitle}
+        imagesCarousel={dataJson?.carouselImages}
+      />}
       <AboutPart
-        titleAbout={dataJson.aboutTitle}
-        subtitleAbout={dataJson.aboutSubtitle}
-        imagesAbout={dataJson.aboutImages}
-        textAbout={dataJson.aboutText}
+        titleAbout={dataJson?.aboutTitle}
+        subtitleAbout={dataJson?.aboutSubtitle}
+        imagesAbout={dataJson?.aboutImages}
+        textAbout={dataJson?.aboutText}
       />
       <Gallery
-        titleGallery={dataJson.galleryTitle}
-        subtitleGallery={dataJson.gallerySubtitle}
-        imagesGallery={dataJson.galleryImages}
+        titleGallery={dataJson?.galleryTitle}
+        subtitleGallery={dataJson?.gallerySubtitle}
+        imagesGallery={dataJson?.galleryImages}
       />
       <Footer
-        textFooter={dataJson.footerText}
-        iconsFooter={dataJson.footerIcons}
-        logo={dataJson.logoText}
-        copyrightFooter={dataJson.footerCopyright}
+        textFooter={dataJson?.footerText}
+        iconsFooter={dataJson?.footerIcons}
+        logo={dataJson?.logoText}
+        copyrightFooter={dataJson?.footerCopyright}
       />
     </div>
   );
