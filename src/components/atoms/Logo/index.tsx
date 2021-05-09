@@ -1,7 +1,12 @@
 import React from 'react';
 import './style.scss';
 
-const Logo = ({ text, logoVariant }) => (
+type LogoProps = {
+  text: string,
+  logoVariant?: string,
+}
+
+const Logo = ({ text, logoVariant }: LogoProps) => (
   <h1 className={logoVariant ? `logo-${logoVariant}` : 'logo'}>{text}</h1>
 );
 

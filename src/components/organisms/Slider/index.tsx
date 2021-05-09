@@ -1,35 +1,42 @@
 import React, { useState } from 'react';
 import Button from '../../atoms/Button';
 import CarouselText from '../../molecules/CarouselText';
+import { Images } from '../../../interface';
 import './style.scss';
 
-const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }) => {
-  const length = imagesCarousel && imagesCarousel.length;
+type SliderProps = {
+  titleCarousel?: string,
+  subtitleCarousel?: string,
+  imagesCarousel?: Images[],
+}
+
+const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }: SliderProps) => {
+  const length: number | undefined = imagesCarousel && imagesCarousel.length;
   const [transform, setTransform] = useState(-100);
   const [transition, setTransition] = useState('transition-on');
   const [currentSlide, setCurrentSlide] = useState(1);
 
-  let images = [];
+  let images: Array<JSX.Element> | undefined = [];
   images = imagesCarousel && imagesCarousel.map((item) => (
     <img src={require(`../../../${item.src}`).default} alt={item.alt} key={item.id} className="slider__slide__img" />
     ));
-  imagesCarousel && images.push(<img src={require(`../../../${imagesCarousel[0].src}`).default} alt={imagesCarousel[0].alt} key={length+1} className="slider__slide__img" />);
-  imagesCarousel && images.unshift(<img src={require(`../../../${imagesCarousel[length-1].src}`).default} alt={imagesCarousel[length-1].alt} key={0} className="slider__slide__img" />);
-  const slidesLength = images && images.length;
+  imagesCarousel && length && images && images.push(<img src={require(`../../../${imagesCarousel[0].src}`).default} alt={imagesCarousel[0].alt} key={length+1} className="slider__slide__img" />);
+  imagesCarousel && length && images && images.unshift(<img src={require(`../../../${imagesCarousel[length-1].src}`).default} alt={imagesCarousel[length-1].alt} key={0} className="slider__slide__img" />);
+  const slidesLength : number | undefined = images && images.length;
   
-  const clickLeft = () => {
+  const clickLeft: Function = () => {
     setCurrentSlide(currentSlide - 1);
-    if (currentSlide < 1) {
+    if (slidesLength && currentSlide < 1) {
       setCurrentSlide(slidesLength - 1);
     }
     setTransform(-100 * (currentSlide - 1));
-    if (currentSlide === 1 && transition === 'transition-on') {
+    if (slidesLength && currentSlide === 1 && transition === 'transition-on') {
       setTimeout(() => {
         setTransition('transition-off');
         setCurrentSlide(slidesLength - 2);
         setTransform(-100 * (slidesLength - 2));
       }, 300);
-    } else if (currentSlide === 1 && transition === 'transition-off') {
+    } else if (slidesLength && currentSlide === 1 && transition === 'transition-off') {
       setTransition('transition-on');
       setTimeout(() => {
         setTransition('transition-off');
@@ -41,19 +48,19 @@ const Slider = ({ titleCarousel, subtitleCarousel, imagesCarousel }) => {
     }
   };
 
-  const clickRight = () => {
+  const clickRight: Function = () => {
     setCurrentSlide(currentSlide + 1);
-    if (currentSlide === slidesLength - 1) {
+    if (slidesLength && currentSlide === slidesLength - 1) {
       setCurrentSlide(1);
     }
     setTransform(-100 * (currentSlide + 1));
-    if (currentSlide === (slidesLength - 2) && transition === 'transition-on') {
+    if (slidesLength && currentSlide === (slidesLength - 2) && transition === 'transition-on') {
       setTimeout(() => {
         setTransition('transition-off');
         setTransform(-100);
         setCurrentSlide(1);
       }, 300);
-    } else if (currentSlide === (slidesLength - 2) && transition === 'transition-off') {
+    } else if (slidesLength && currentSlide === (slidesLength - 2) && transition === 'transition-off') {
       setTransition('transition-on');
       setTimeout(() => {
         setTransition('transition-off');

@@ -2,28 +2,36 @@ import React, { useState } from 'react';
 import Icon from '../../atoms/Icon';
 import FormSearch from '../../atoms/FormSearch';
 import Button from '../../atoms/Button';
+import { Items } from '../../../interface';
 import burger from '../../../images/burger.svg';
 import close from '../../../images/close.svg';
 import './style.scss';
 
-const Menu = ({
+type MenuProps = {
+  updateCartState: React.Dispatch<React.SetStateAction<boolean>>,
+  updateMenuState: React.Dispatch<React.SetStateAction<boolean>>,
+  isCartVisible: boolean,
+  menuItems: Items[],
+  submenuItems: Items[]
+}
+
+const Menu: Function = ({
   updateMenuState, updateCartState, isCartVisible, menuItems, submenuItems,
-}) => {
+}: MenuProps) => {
   const [isMenuVisible, setMenuIsVisible] = useState(false);
   const [isSubmenuVisible, setSubmenuIsVisible] = useState(false);
 
-  const dropDownClickHandler = (isMenuVisible, isSubmenuVisible) => {
-    const isVisible = !isMenuVisible;
-    updateMenuState(isVisible);
+  const dropDownClickHandler: Function = (isMenuVisible: boolean, isSubmenuVisible: boolean) => {
+    updateMenuState(!isMenuVisible);
     updateCartState(false);
-    setMenuIsVisible(isVisible);
+    setMenuIsVisible(!isMenuVisible);
     if (isSubmenuVisible === true) {
       setSubmenuIsVisible(false);
       setMenuIsVisible(false);
     }
   };
 
-  const showSubmenuClickHandler = (isSubmenuVisible) => {
+  const showSubmenuClickHandler: Function = (isSubmenuVisible: boolean) => {
     const isVisible = !isSubmenuVisible;
     setSubmenuIsVisible(isVisible);
     setMenuIsVisible(false);

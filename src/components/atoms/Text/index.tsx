@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.scss';
 
-const Text = ({ text }) => (
+type TextProps = {
+  text: string,
+}
+
+const Text = ({ text }: TextProps) => (
   <p className="text">{text}</p>
 );
 
